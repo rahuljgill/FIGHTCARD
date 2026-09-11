@@ -1,0 +1,80 @@
+{
+  "fighters": [
+    {
+      "id": "oleksandr-usyk",
+      "first_name": "Oleksandr",
+      "last_name": "Usyk",
+      "nickname": "The Cat",
+      "date_of_birth": "1987-01-17",
+      "country": "UKR",
+      "height": "6'3\" / 191 CM",
+      "reach": "78\" / 198 CM",
+      "weight": "200 LBS / 90.7 KG",
+      "stance": "Orthodox",
+      "hometown": "Simferopol, Ukraine",
+      "record": {
+        "wins": 24,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": ["W", "W", "W", "W", "W"]
+    },
+    {
+      "id": "tyson-fury",
+      "first_name": "Tyson",
+      "last_name": "Fury",
+      "nickname": "The Gypsy King",
+      "date_of_birth": "1988-08-12",
+      "country": "GBR",
+      "height": "6'9\" / 206 CM",
+      "reach": "85\" / 216 CM",
+      "weight": "264 LBS / 120 KG",
+      "stance": "Orthodox",
+      "hometown": "Manchester, England",
+      "record": {
+        "wins": 34,
+        "losses": 1,
+        "draws": 1
+      },
+      "last_5": ["W", "W", "W", "L", "W"]
+    },
+    {
+      "id": "devin-haney",
+      "first_name": "Devin",
+      "last_name": "Haney",
+      "nickname": "The Dream",
+      "date_of_birth": "1998-11-17",
+      "country": "USA",
+      "height": "5'8\" / 173 CM",
+      "reach": "71\" / 180 CM",
+      "weight": "140 LBS / 63.5 KG",
+      "stance": "Orthodox",
+      "hometown": "San Francisco, California, USA",
+      "record": {
+        "wins": 33,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": ["W", "W", "W", "W", "W"]
+    },
+    {
+      "id": "example-fighter",
+      "first_name": "Example",
+      "last_name": "Fighter",
+      "nickname": "The Example",
+      "date_of_birth": "1995-05-12",
+      "country": "USA",
+      "height": "5'10\" / 178 CM",
+      "reach": "72\" / 183 CM",
+      "weight": "140 LBS / 63.5 KG",
+      "stance": "Orthodox",
+      "hometown": "Mackay, Australia",
+      "record": {
+        "wins": 20,
+        "losses": 2,
+        "draws": 0
+      },
+      "last_5": ["W", "W", "L", "W", "W"]
+    }
+  ]
+}

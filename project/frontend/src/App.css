@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+@plugin "tailwind-scrollbar";
+
+@theme {
+  /* Colors */
+  --color-background: #050711;
+  --color-purple: #6f5cc2;
+  --color-text: #a2a4aa;
+  --color-win: #0c4518;
+  --color-loss: #df3e4c;
+
+  /* Fonts */
+  --font-body: "Pixelify Sans", sans-serif;
+  --font-heading: "Pixelify Sans", sans-serif;
+}
+
+html {
+  zoom: 1.4;
+}
