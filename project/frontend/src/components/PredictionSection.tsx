@@ -1,40 +1,152 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import bars2 from "../assets/bars2.svg";
-import { getPredictionByFightId } from "../data/predictions";
+
+import api from "../api/client";
+import { useCurrentUser } from "../api/useCurrentUser";
 
 interface PredictionSectionProps {
   fightId: string;
+  fighter1Id: string;
+  fighter2Id: string;
   fighter1Name: string;
   fighter2Name: string;
   readOnly?: boolean;
 }
 
+interface PredictionResponse {
+  fighter1: {
+    fighterId: string;
+    votes: number;
+    percentage: number;
+  };
+  fighter2: {
+    fighterId: string;
+    votes: number;
+    percentage: number;
+  };
+  userVote: string | null;
+}
+
 function PredictionSection({
   fightId,
+  fighter1Id,
+  fighter2Id,
   fighter1Name,
   fighter2Name,
   readOnly = false,
 }: PredictionSectionProps) {
-  const base = getPredictionByFightId(fightId);
+  const [fighter1Pct, setFighter1Pct] = useState(0);
+  const [fighter2Pct, setFighter2Pct] = useState(0);
 
-  const [fighter1Votes, setFighter1Votes] = useState(base?.fighter1Votes ?? 50);
-  const [fighter2Votes, setFighter2Votes] = useState(base?.fighter2Votes ?? 50);
+  const [fighter1Votes, setFighter1Votes] = useState(0);
+  const [fighter2Votes, setFighter2Votes] = useState(0);
+
+  const [loading, setLoading] = useState(true);
+
   const [userVote, setUserVote] = useState<"fighter1" | "fighter2" | null>(
     null,
   );
 
-  const total = fighter1Votes + fighter2Votes;
-  const fighter1Pct = total > 0 ? Math.round((fighter1Votes / total) * 100) : 0;
-  const fighter2Pct = 100 - fighter1Pct;
+  const [loginMessage, setLoginMessage] = useState(false);
 
-  const handleVote = (choice: "fighter1" | "fighter2") => {
-    if (readOnly || userVote) return; // one vote only, per fight, per session
+  const { data: currentUser, isLoading: userLoading } = useCurrentUser();
 
-    if (choice === "fighter1") setFighter1Votes((v) => v + 1);
-    else setFighter2Votes((v) => v + 1);
+  useEffect(() => {
+    const fetchPredictions = async () => {
+      try {
+        setLoading(true);
 
-    setUserVote(choice);
+        const response = await api.get<PredictionResponse>(
+          `/api/fights/${fightId}/predictions?fighter1=${fighter1Id}&fighter2=${fighter2Id}`,
+        );
+
+        const data = response.data;
+
+        setFighter1Pct(data.fighter1.percentage);
+        setFighter2Pct(data.fighter2.percentage);
+
+        setFighter1Votes(data.fighter1.votes);
+        setFighter2Votes(data.fighter2.votes);
+
+        if (data.userVote === fighter1Id) {
+          setUserVote("fighter1");
+        } else if (data.userVote === fighter2Id) {
+          setUserVote("fighter2");
+        } else {
+          setUserVote(null);
+        }
+      } catch (error) {
+        console.error("Error fetching predictions:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPredictions();
+  }, [fightId, fighter1Id, fighter2Id]);
+
+  const handleVote = async (choice: "fighter1" | "fighter2") => {
+    if (readOnly || userVote) return;
+
+    if (userLoading) return;
+
+    if (!currentUser) {
+      setLoginMessage(true);
+      return;
+    }
+
+    const fighterId = choice === "fighter1" ? fighter1Id : fighter2Id;
+
+    try {
+      await api.post(`/api/fights/${fightId}/predictions`, {
+        fighter_id: fighterId,
+      });
+
+      setUserVote(choice);
+      setLoginMessage(false);
+
+      // Add the new vote locally.
+      if (choice === "fighter1") {
+        setFighter1Votes((votes) => votes + 1);
+      } else {
+        setFighter2Votes((votes) => votes + 1);
+      }
+
+      // Calculate the new percentages immediately.
+      const newFighter1Votes =
+        choice === "fighter1" ? fighter1Votes + 1 : fighter1Votes;
+
+      const newFighter2Votes =
+        choice === "fighter2" ? fighter2Votes + 1 : fighter2Votes;
+
+      const newTotalVotes = newFighter1Votes + newFighter2Votes;
+
+      const newFighter1Pct =
+        newTotalVotes > 0
+          ? Math.round((newFighter1Votes / newTotalVotes) * 100)
+          : 0;
+
+      const newFighter2Pct = 100 - newFighter1Pct;
+
+      setFighter1Pct(newFighter1Pct);
+      setFighter2Pct(newFighter2Pct);
+    } catch (error) {
+      console.error("Error submitting prediction:", error);
+    }
   };
+
+  if (loading) {
+    return (
+      <div className="mx-auto mt-10 max-w-6xl px-6">
+        <div className="rounded-md border border-purple/40 px-6 py-5 font-body">
+          <p className="text-center text-sm uppercase tracking-widest text-text">
+            Loading predictions...
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto mt-10 max-w-6xl px-6">
@@ -45,21 +157,34 @@ function PredictionSection({
             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-sm border border-purple/50">
               <img src={bars2} alt="" className="h-4.5 w-4.5" />
             </div>
+
             <div>
               <h2 className="font-heading text-lg uppercase tracking-widest text-purple">
                 Fight Prediction
               </h2>
+
               <p
-                className={`mt-1 text-sm ${readOnly ? "text-red-400" : "text-white"}`}
+                className={`mt-1 text-sm ${
+                  readOnly ? "text-red-400" : "text-white"
+                }`}
               >
                 {readOnly
                   ? "Predictions have been closed for this fight as it's over!."
                   : "Who do you think will win?"}
               </p>
-              <p className="mt-1 text-xs text-text">
+
+              <p
+                className={`mt-1 text-xs ${
+                  userVote ? "text-red-400" : "text-text"
+                }`}
+              >
                 {readOnly
                   ? ""
-                  : "Cast your vote and see what the community thinks."}
+                  : userVote
+                    ? "You have already voted for this."
+                    : loginMessage
+                      ? "Log in to cast your vote."
+                      : "Cast your vote and see what the community thinks."}
               </p>
             </div>
           </div>
@@ -73,6 +198,7 @@ function PredictionSection({
               disabled={readOnly || userVote !== null}
               onSelect={() => handleVote("fighter1")}
             />
+
             <PredictionRow
               label={fighter2Name}
               percent={fighter2Pct}
@@ -121,6 +247,7 @@ function PredictionRow({
       {/* Name + bar */}
       <div className="flex-1">
         <p className="text-sm text-white">{label}</p>
+
         <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-purple/15">
           <div
             className="h-full rounded-full bg-purple transition-all duration-500"

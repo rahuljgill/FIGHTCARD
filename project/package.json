@@ -1,8 +1,15 @@
 {
+  "name": "fightcard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n FRONTEND,BACKEND \"npm --prefix frontend run dev\" \"cd backend && php artisan serve\""
+  },
   "dependencies": {
     "tailwind-scrollbar": "^4.0.2"
   },
   "devDependencies": {
-    "vite-plugin-svgr": "^5.2.0"
+    "vite-plugin-svgr": "^5.2.0",
+    "concurrently": "^9.0.0"
   }
 }

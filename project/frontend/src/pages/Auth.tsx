@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
 import gloves from "../assets/gloves.svg";
+import api from "../api/client";
+import axios from "axios";
 
 function GoogleIcon() {
   return (
@@ -89,12 +91,50 @@ function AuthGlovesHeader({
 }
 
 function LoginForm({ onSwitch }: { onSwitch: () => void }) {
-  const [emailOrUsername, setEmailOrUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // no backend yet
+    setError("");
+
+    try {
+      setLoading(true);
+
+      // Get a fresh CSRF token
+      await api.get("/sanctum/csrf-cookie");
+
+      // Log the user in
+      const response = await api.post("/api/auth/login", {
+        email,
+        password,
+      });
+
+      console.log("Login successful:", response.data);
+
+      // User is now authenticated through the Laravel session
+      window.location.href = "/";
+    } catch (error: unknown) {
+      console.error("Login error:", error);
+
+      if (axios.isAxiosError(error)) {
+        if (error.response?.status === 422) {
+          setError(
+            error.response.data?.message || "The login details are incorrect.",
+          );
+        } else if (error.response?.status === 401) {
+          setError("Invalid email or password.");
+        } else {
+          setError("Something went wrong. Please try again.");
+        }
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -106,16 +146,14 @@ function LoginForm({ onSwitch }: { onSwitch: () => void }) {
 
       <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
         <div>
-          <label className="text-sm uppercase text-white">
-            Email or Username
-          </label>
+          <label className="text-sm uppercase text-white">Email</label>
           <div className="mt-2 flex items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-4 py-3">
             <Mail size={18} className="text-purple" />
             <input
               type="text"
-              value={emailOrUsername}
-              onChange={(e) => setEmailOrUsername(e.target.value)}
-              placeholder="Enter your email or username"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
               className="flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
             />
           </div>
@@ -132,11 +170,13 @@ function LoginForm({ onSwitch }: { onSwitch: () => void }) {
           </div>
         </div>
 
+        {error && <p className="text-sm text-red-400">{error}</p>}
         <button
           type="submit"
-          className="mt-2 rounded-sm border border-purple bg-purple/80 py-3 text-sm uppercase tracking-widest text-white transition-opacity hover:opacity-90"
+          disabled={loading}
+          className="mt-2 rounded-sm border border-purple bg-purple/80 py-3 text-sm uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          Login
+          {loading ? "Logging in..." : "Login"}
         </button>
 
         <div className="my-2 flex items-center gap-4">
@@ -168,9 +208,61 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // no backend yet
+
+    setError("");
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      // Get the CSRF cookie before making the POST request
+      await api.get("/sanctum/csrf-cookie");
+
+      // Register the user
+      const response = await api.post("/api/auth/register", {
+        name: username,
+        email,
+        password,
+        password_confirmation: confirmPassword,
+      });
+
+      console.log("Registration successful:", response.data);
+
+      // Laravel has authenticated the user and created the session.
+      window.location.href = "/";
+    } catch (error: unknown) {
+      console.error("Registration error:", error);
+
+      if (axios.isAxiosError(error)) {
+        if (error.response?.data?.errors) {
+          const firstError = Object.values(error.response.data.errors)[0];
+
+          if (Array.isArray(firstError)) {
+            setError(firstError[0]);
+          } else {
+            setError("Registration failed.");
+          }
+        } else {
+          setError(
+            error.response?.data?.message ||
+              "Something went wrong. Please try again.",
+          );
+        }
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -183,8 +275,10 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
       <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
         <div>
           <label className="text-sm uppercase text-white">Username</label>
+
           <div className="mt-2 flex items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-4 py-3">
             <User size={18} className="text-purple" />
+
             <input
               type="text"
               value={username}
@@ -197,8 +291,10 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
 
         <div>
           <label className="text-sm uppercase text-white">Email</label>
+
           <div className="mt-2 flex items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-4 py-3">
             <Mail size={18} className="text-purple" />
+
             <input
               type="email"
               value={email}
@@ -211,6 +307,7 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
 
         <div>
           <label className="text-sm uppercase text-white">Password</label>
+
           <div className="mt-2">
             <PasswordInput
               placeholder="Create a password"
@@ -218,12 +315,18 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
               onChange={setPassword}
             />
           </div>
+
+          <p className="mt-3 text-xs text-text">
+            Note: Password must be at least 8 characters long and include
+            letters, numbers, and symbols.
+          </p>
         </div>
 
         <div>
           <label className="text-sm uppercase text-white">
             Confirm Password
           </label>
+
           <div className="mt-2">
             <PasswordInput
               placeholder="Confirm your password"
@@ -233,11 +336,14 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
           </div>
         </div>
 
+        {error && <p className="text-sm text-red-400">{error}</p>}
+
         <button
           type="submit"
-          className="mt-2 rounded-sm border border-purple bg-purple/80 py-3 text-sm uppercase tracking-widest text-white transition-opacity hover:opacity-90"
+          disabled={loading}
+          className="mt-2 rounded-sm border border-purple bg-purple/80 py-3 text-sm uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          Register
+          {loading ? "Registering..." : "Register"}
         </button>
 
         <div className="my-2 flex items-center gap-4">

@@ -215,12 +215,14 @@ function FightDetail() {
 
         <PredictionSection
           fightId={fight.id}
+          fighter1Id={fight.main_event.fighter_1}
+          fighter2Id={fight.main_event.fighter_2}
           fighter1Name={`${fighter1.first_name} ${fighter1.last_name}`}
           fighter2Name={`${fighter2.first_name} ${fighter2.last_name}`}
           readOnly={isClosed}
         />
 
-        <DiscussionSection readOnly={isClosed} />
+        <DiscussionSection fightId={fight.id} readOnly={isClosed} />
       </div>
     </div>
   );
