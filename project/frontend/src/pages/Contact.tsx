@@ -10,7 +10,7 @@ function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // no backend yet — nothing to send to
+    // I'LL CONNECT CONTACT FROM LATER.
   };
 
   return (

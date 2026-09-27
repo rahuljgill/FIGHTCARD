@@ -22,6 +22,7 @@ return [
     'allowed_origins' => [
     'http://127.0.0.1:5173',
     'https://fightcard.rahulgill2929.workers.dev',
+    'https://fightcard.win'
 ],
 
     'allowed_origins_patterns' => [],

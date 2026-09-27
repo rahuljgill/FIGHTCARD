@@ -175,7 +175,7 @@ function CommentRow({
                   )}
                 </div>
               ) : (
-                <p className="mt-1 break-words text-sm text-white">
+                <p className="mt-1 wrap-break-word text-sm text-white">
                   {comment.message}
                 </p>
               )}
@@ -191,7 +191,7 @@ function CommentRow({
                 }}
                 className="flex shrink-0 items-center gap-1 text-xs text-purple transition-opacity hover:opacity-80 sm:text-sm"
               >
-                <MessageCircle size={13} className="sm:h-[14px] sm:w-[14px]" />
+                <MessageCircle size={13} className="sm:h-3.5 sm:w-3.5" />
 
                 {isReplying ? "Cancel" : "Reply"}
               </button>
@@ -211,7 +211,7 @@ function CommentRow({
                 disabled={deleteLoading}
                 className="flex items-center gap-1 text-[10px] text-text transition-colors hover:text-purple disabled:opacity-50 sm:text-xs"
               >
-                <Pencil size={12} className="sm:h-[13px] sm:w-[13px]" />
+                <Pencil size={12} className="sm:h-3.25 sm:w-3.25" />
                 Edit
               </button>
 
@@ -224,7 +224,7 @@ function CommentRow({
                 disabled={deleteLoading}
                 className="flex items-center gap-1 text-[10px] text-red-400 transition-colors hover:text-red-300 disabled:cursor-not-allowed disabled:opacity-50 sm:text-xs"
               >
-                <Trash2 size={12} className="sm:h-[13px] sm:w-[13px]" />
+                <Trash2 size={12} className="sm:h-3.25 sm:w-3.25" />
 
                 {deleteLoading ? "Deleting..." : "Delete"}
               </button>
@@ -319,7 +319,7 @@ function CommentRow({
                 {comment.username}
               </p>
 
-              <p className="mt-1 break-words text-sm text-white">
+              <p className="mt-1 wrap-break-word text-sm text-white">
                 {comment.message}
               </p>
             </div>
