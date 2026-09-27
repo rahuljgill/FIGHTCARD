@@ -2,7 +2,6 @@ import { useParams, Link } from "react-router-dom";
 import { getFightById } from "../data/fights";
 import { getFighterById } from "../data/fighters";
 import { formatRecord, calculateAge } from "../types/fighter";
-import type { Fighter } from "../types/fighter";
 import { getFlagUrl } from "../utils/flags";
 import { getFighterSprite } from "../utils/sprites";
 import ring from "../assets/ring.png";
@@ -15,40 +14,15 @@ import UndercardSection from "../components/UndercardSection";
 import DiscussionSection from "../components/DiscussionSection";
 import PredictionSection from "../components/PredictionSection";
 
-function LastFive({ results }: { results: ("W" | "L")[] }) {
-  return (
-    <div className="flex justify-center gap-1">
-      {results.map((r, i) => (
-        <img
-          key={i}
-          src={r === "W" ? tickIcon : crossIcon}
-          alt={r === "W" ? "Win" : "Loss"}
-          className="h-6 w-6"
-        />
-      ))}
-    </div>
-  );
-}
-
-function StatColumn({ fighter }: { fighter: Fighter }) {
-  return (
-    <div className="flex flex-col gap-2 text-center text-sm uppercase text-white">
-      <p>{calculateAge(fighter.date_of_birth)}</p>
-      <p>{fighter.height}</p>
-      <p>{fighter.reach}</p>
-      <p>{fighter.stance}</p>
-      <p>{fighter.weight}</p>
-      <p>{fighter.hometown}</p>
-    </div>
-  );
-}
-
 function FightDetail() {
   const { id } = useParams();
+
   const fight = id ? getFightById(id) : undefined;
+
   const fighter1 = fight
     ? getFighterById(fight.main_event.fighter_1)
     : undefined;
+
   const fighter2 = fight
     ? getFighterById(fight.main_event.fighter_2)
     : undefined;
@@ -62,7 +36,9 @@ function FightDetail() {
   }
 
   const isClosed = fight.status === "closed";
+
   const { winner, method } = fight.main_event.result;
+
   const winnerFighter = winner ? getFighterById(winner) : undefined;
 
   const resultLine =
@@ -74,7 +50,12 @@ function FightDetail() {
 
   const dateLabel = new Date(fight.date + "T00:00:00").toLocaleDateString(
     "en-US",
-    { weekday: "short", month: "short", day: "2-digit", year: "numeric" },
+    {
+      weekday: "short",
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+    },
   );
 
   const flag1 = getFlagUrl(fighter1.country);
@@ -85,8 +66,9 @@ function FightDetail() {
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-12 font-body">
-      <div className="mx-auto max-w-5xl px-6">
-        <Link to="/" className="mb-4 inline-block text-sm text-purple">
+      <div className="mx-auto max-w-5xl px-3 sm:px-6">
+        {/* Back link */}
+        <Link to="/" className="mb-4 inline-block text-sm text-purple sm:mb-4">
           ← Back to Events
         </Link>
 
@@ -101,104 +83,168 @@ function FightDetail() {
           {/* Darkening overlay */}
           <div className="absolute inset-0 bg-black/50" />
 
-          {/* Content sits above the overlay */}
-          <div className="relative z-10 px-6 pt-6 pb-8">
-            <h1 className="text-center text-xl uppercase tracking-wide text-purple">
+          {/* Content */}
+          <div className="relative z-10 px-3 pt-4 pb-5 sm:px-6 sm:pt-6 sm:pb-8">
+            {/* Fight title */}
+            <h1 className="text-center text-base uppercase tracking-wide text-purple sm:text-xl">
               {fight.main_event.title ?? "Main Event"}
             </h1>
-            <p className="mt-1 text-center text-sm uppercase text-text">
+
+            {/* Fight information */}
+            <p className="mt-1 text-center text-[10px] uppercase text-text sm:text-sm">
               {dateLabel} • {fight.venue.name}, {fight.venue.city},{" "}
               {fight.venue.country}
             </p>
 
-            {/* Result banner — only shown once the fight is closed */}
+            {/* Result banner */}
             {resultLine && (
-              <div className="mx-auto mt-4 max-w-md rounded-md border border-purple bg-purple/10 px-4 py-2 text-center">
-                <p className="text-sm uppercase tracking-wide text-white">
+              <div className="mx-auto mt-3 max-w-md rounded-md border border-purple bg-purple/10 px-3 py-2 text-center sm:mt-4 sm:px-4">
+                <p className="text-xs uppercase tracking-wide text-white sm:text-sm">
                   Final Result
                 </p>
-                <p className="text-base uppercase text-green-300">
+
+                <p className="text-sm uppercase text-green-300 sm:text-base">
                   {resultLine}
                 </p>
               </div>
             )}
 
-            {/* Fighters + VS */}
-            <div className="mt-8 flex items-center justify-between gap-6">
-              <div className="flex flex-1 flex-col items-center text-center">
+            {/* ===================================================== */}
+            {/* FIGHTERS */}
+            {/* ===================================================== */}
+
+            <div className="mt-5 flex items-center justify-between gap-1 sm:mt-8 sm:gap-6">
+              {/* Fighter 1 */}
+              <div className="flex min-w-0 flex-1 flex-col items-center text-center">
                 <img
                   src={sprite1}
                   alt={fighter1.last_name}
-                  className="h-48 w-auto object-contain"
+                  className="h-28 w-auto object-contain sm:h-48"
                 />
-                <p className="mt-2 font-body text-sm uppercase text-text">
+
+                <p className="mt-1 max-w-full truncate font-body text-xs uppercase text-text sm:mt-2 sm:text-sm">
                   {fighter1.first_name}
                 </p>
-                <h2 className="font-heading text-3xl uppercase text-white">
+
+                <h2 className="max-w-full truncate font-heading text-2xl uppercase text-white sm:text-3xl">
                   {fighter1.last_name}
                 </h2>
-                <p className="text-sm uppercase text-purple">
+
+                <p className="max-w-full truncate text-xs uppercase text-purple sm:text-sm">
                   {fighter1.nickname}
                 </p>
-                <p className="text-sm text-text">
+
+                <p className="text-xs text-text sm:text-sm">
                   {formatRecord(fighter1.record)}
                 </p>
+
                 {flag1 && (
                   <img
                     src={flag1}
                     alt={fighter1.country}
-                    className="mt-1 h-4 w-6 object-cover"
+                    className="mt-1 h-3 w-5 object-cover sm:h-4 sm:w-6"
                   />
                 )}
-                <p className="mt-2 mb-2 text-xs uppercase text-white">Last 5</p>
-                <LastFive results={fighter1.last_5} />
+
+                <p className="mt-1 mb-1 text-[10px] uppercase text-white sm:mt-2 sm:mb-2 sm:text-xs">
+                  Last 5
+                </p>
+
+                <div className="flex justify-center gap-0.5 sm:gap-1">
+                  {fighter1.last_5.map((r, i) => (
+                    <img
+                      key={i}
+                      src={r === "W" ? tickIcon : crossIcon}
+                      alt={r === "W" ? "Win" : "Loss"}
+                      className="h-5 w-5 sm:h-6 sm:w-6"
+                    />
+                  ))}
+                </div>
               </div>
 
-              <div className="flex flex-col items-center gap-1">
-                <img src={crown} alt="" className="h-12 w-12" />
-                <p className="text-xs uppercase tracking-widest text-purple">
+              {/* Center */}
+              <div className="flex w-16 shrink-0 flex-col items-center gap-0.5 sm:w-auto sm:gap-1">
+                <img src={crown} alt="" className="h-8 w-8 sm:h-12 sm:w-12" />
+
+                <p className="text-[9px] uppercase tracking-widest text-purple sm:text-xs">
                   Main Event
                 </p>
-                <p className="text-xs uppercase text-text">
+
+                <p className="text-[9px] uppercase text-text sm:text-xs">
                   {fight.main_event.scheduled_rounds} Rounds
                 </p>
-                <span className="mt-1 text-6xl font-bold text-purple">VS</span>
+
+                <span className="mt-1 text-4xl font-bold text-purple sm:text-6xl">
+                  VS
+                </span>
               </div>
 
-              <div className="flex flex-1 flex-col items-center text-center">
+              {/* Fighter 2 */}
+              <div className="flex min-w-0 flex-1 flex-col items-center text-center">
                 <img
                   src={sprite2}
                   alt={fighter2.last_name}
-                  className="h-48 w-auto object-contain"
+                  className="h-28 w-auto object-contain sm:h-48"
                 />
-                <p className="mt-2 font-body text-sm uppercase text-text">
+
+                <p className="mt-1 max-w-full truncate font-body text-xs uppercase text-text sm:mt-2 sm:text-sm">
                   {fighter2.first_name}
                 </p>
-                <h2 className="font-heading text-3xl uppercase text-white">
+
+                <h2 className="max-w-full truncate font-heading text-2xl uppercase text-white sm:text-3xl">
                   {fighter2.last_name}
                 </h2>
-                <p className="text-sm uppercase text-purple">
+
+                <p className="max-w-full truncate text-xs uppercase text-purple sm:text-sm">
                   {fighter2.nickname}
                 </p>
-                <p className="text-sm text-text">
+
+                <p className="text-xs text-text sm:text-sm">
                   {formatRecord(fighter2.record)}
                 </p>
+
                 {flag2 && (
                   <img
                     src={flag2}
                     alt={fighter2.country}
-                    className="mt-1 h-4 w-6 object-cover"
+                    className="mt-1 h-3 w-5 object-cover sm:h-4 sm:w-6"
                   />
                 )}
-                <p className="mt-2 mb-2 text-xs uppercase text-white">Last 5</p>
-                <LastFive results={fighter2.last_5} />
+
+                <p className="mt-1 mb-1 text-[10px] uppercase text-white sm:mt-2 sm:mb-2 sm:text-xs">
+                  Last 5
+                </p>
+
+                <div className="flex justify-center gap-0.5 sm:gap-1">
+                  {fighter2.last_5.map((r, i) => (
+                    <img
+                      key={i}
+                      src={r === "W" ? tickIcon : crossIcon}
+                      alt={r === "W" ? "Win" : "Loss"}
+                      className="h-5 w-5 sm:h-6 sm:w-6"
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Stat comparison — its own box, inside the ring section */}
-            <div className="mt-8 grid grid-cols-3 gap-4 rounded-md border border-purple/30 bg-background p-6">
-              <StatColumn fighter={fighter1} />
-              <div className="flex flex-col gap-2 text-center text-sm uppercase text-purple">
+            {/* ===================================================== */}
+            {/* STAT COMPARISON */}
+            {/* ===================================================== */}
+
+            <div className="mt-5 grid grid-cols-3 gap-1 rounded-md border border-purple/30 bg-background p-3 sm:mt-8 sm:gap-4 sm:p-6">
+              {/* Fighter 1 stats */}
+              <div className="flex flex-col gap-2 text-center text-[10px] uppercase text-white sm:gap-2 sm:text-sm">
+                <p>{calculateAge(fighter1.date_of_birth)}</p>
+                <p>{fighter1.height}</p>
+                <p>{fighter1.reach}</p>
+                <p>{fighter1.stance}</p>
+                <p>{fighter1.weight}</p>
+                <p className="truncate">{fighter1.hometown}</p>
+              </div>
+
+              {/* Stat labels */}
+              <div className="flex flex-col gap-2 text-center text-[10px] uppercase text-purple sm:gap-2 sm:text-sm">
                 <p>Age</p>
                 <p>Height</p>
                 <p>Reach</p>
@@ -206,13 +252,24 @@ function FightDetail() {
                 <p>Weight</p>
                 <p>Hometown</p>
               </div>
-              <StatColumn fighter={fighter2} />
+
+              {/* Fighter 2 stats */}
+              <div className="flex flex-col gap-2 text-center text-[10px] uppercase text-white sm:gap-2 sm:text-sm">
+                <p>{calculateAge(fighter2.date_of_birth)}</p>
+                <p>{fighter2.height}</p>
+                <p>{fighter2.reach}</p>
+                <p>{fighter2.stance}</p>
+                <p>{fighter2.weight}</p>
+                <p className="truncate">{fighter2.hometown}</p>
+              </div>
             </div>
           </div>
         </div>
 
+        {/* Undercard */}
         <UndercardSection bouts={fight.undercard} />
 
+        {/* Prediction */}
         <PredictionSection
           fightId={fight.id}
           fighter1Id={fight.main_event.fighter_1}
@@ -222,6 +279,7 @@ function FightDetail() {
           readOnly={isClosed}
         />
 
+        {/* Discussion */}
         <DiscussionSection fightId={fight.id} readOnly={isClosed} />
       </div>
     </div>

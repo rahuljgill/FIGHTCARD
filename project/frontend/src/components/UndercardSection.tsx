@@ -8,35 +8,38 @@ function UndercardRow({ bout }: { bout: Bout }) {
   const name1 = fighter1
     ? `${fighter1.first_name} ${fighter1.last_name}`
     : "TBA";
+
   const name2 = fighter2
     ? `${fighter2.first_name} ${fighter2.last_name}`
     : "TBA";
 
   const winner = bout.result?.winner ?? null;
+
   const fighter1Won = winner !== null && winner === bout.fighter_1;
   const fighter2Won = winner !== null && winner === bout.fighter_2;
 
   return (
-    <div className="flex flex-col gap-1 border-t border-purple/20 px-4 py-4 font-body first:border-t-0">
-      {/* Bout title — centered above the whole row */}
+    <div className="flex flex-col gap-2 border-t border-purple/20 px-3 py-3 font-body first:border-t-0 sm:gap-1 sm:px-4 sm:py-4">
+      {/* Bout title */}
       {bout.title && (
-        <p className="text-center text-xs uppercase text-purple">
+        <p className="text-center text-[10px] uppercase text-purple sm:text-xs">
           {bout.title}
         </p>
       )}
 
-      <div className="flex items-center gap-4">
+      {/* Main row */}
+      <div className="flex items-center gap-2 sm:gap-4">
         {/* Order number */}
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm border border-purple/40 text-sm font-bold text-white">
+        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-sm border border-purple/40 text-xs font-bold text-white sm:h-8 sm:w-8 sm:text-sm">
           {bout.order}
         </div>
 
-        {/* Fighters + VS group */}
-        <div className="ml-15.5 flex flex-1 items-center gap-4">
+        {/* Fighters + VS */}
+        <div className="flex min-w-0 flex-1 items-center gap-1 sm:ml-15.5 sm:gap-4">
           {/* Fighter 1 */}
-          <div className="flex-1 text-right">
+          <div className="min-w-0 flex-1 text-right">
             <p
-              className={`text-base uppercase ${
+              className={`truncate text-xs uppercase sm:text-base ${
                 fighter1Won ? "text-green-300 underline" : "text-white"
               }`}
             >
@@ -45,14 +48,14 @@ function UndercardRow({ bout }: { bout: Bout }) {
           </div>
 
           {/* VS */}
-          <div className="w-16 shrink-0 text-center text-lg font-bold text-purple">
+          <div className="w-8 shrink-0 text-center text-sm font-bold text-purple sm:w-16 sm:text-lg">
             VS
           </div>
 
           {/* Fighter 2 */}
-          <div className="flex-1">
+          <div className="min-w-0 flex-1">
             <p
-              className={`text-base uppercase ${
+              className={`truncate text-xs uppercase sm:text-base  ${
                 fighter2Won ? "text-green-300 underline" : "text-white"
               }`}
             >
@@ -61,11 +64,16 @@ function UndercardRow({ bout }: { bout: Bout }) {
           </div>
         </div>
 
-        {/* Rounds*/}
-        <div className="w-24 shrink-0 text-right text-sm uppercase text-text">
+        {/* Rounds - desktop */}
+        <div className="hidden w-24 shrink-0 text-right text-sm uppercase text-text sm:block">
           <p>{bout.scheduled_rounds} Rounds</p>
         </div>
       </div>
+
+      {/* Rounds - mobile */}
+      <p className="text-center text-[10px] uppercase text-text sm:hidden">
+        {bout.scheduled_rounds} Rounds
+      </p>
     </div>
   );
 }
@@ -74,14 +82,16 @@ function UndercardSection({ bouts }: { bouts: Bout[] }) {
   const sorted = [...bouts].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
   return (
-    <div className="mx-auto mt-10 max-w-6xl px-6">
+    <div className="mx-auto mt-7 max-w-6xl px-3 sm:mt-10 sm:px-6">
       {/* Header */}
-      <div className="mb-4 flex items-center justify-center gap-4">
-        <span className="h-px w-16 bg-purple/40" />
-        <h2 className="font-heading text-lg uppercase tracking-widest text-purple">
+      <div className="mb-3 flex items-center justify-center gap-3 sm:mb-4 sm:gap-4">
+        <span className="h-px w-10 bg-purple/40 sm:w-16" />
+
+        <h2 className="font-heading text-base uppercase tracking-widest text-purple sm:text-lg">
           Undercard
         </h2>
-        <span className="h-px w-16 bg-purple/40" />
+
+        <span className="h-px w-10 bg-purple/40 sm:w-16" />
       </div>
 
       {/* Bout list */}

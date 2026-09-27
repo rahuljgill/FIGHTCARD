@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\FightController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -15,8 +18,6 @@ Route::get('/test', function () {
 });
 
 
-use App\Http\Controllers\FightController;
-use App\Http\Controllers\AuthController;
 Route::post('/auth/register', [AuthController::class, 'register']);
 
 Route::get('/fights/{fightId}/comments', [FightController::class, 'comments']);
@@ -29,7 +30,6 @@ Route::middleware('auth:sanctum')->post('/auth/logout', [AuthController::class, 
 
 Route::middleware('auth:sanctum')->delete('/auth/delete', [AuthController::class, 'delete']);
 
-use Illuminate\Support\Facades\Mail;
 Route::get('/test-email', function () {
     Mail::raw(
         'This is a test email from Fight Card Boxing.',

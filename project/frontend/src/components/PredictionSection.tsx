@@ -154,7 +154,7 @@ function PredictionSection({
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           {/* Left: icon + copy */}
           <div className="flex items-start gap-4 md:w-1/3">
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-sm border border-purple/50">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-purple/50">
               <img src={bars2} alt="" className="h-4.5 w-4.5" />
             </div>
 
@@ -235,7 +235,7 @@ function PredictionRow({
     >
       {/* Radio */}
       <span
-        className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border-2 transition-all duration-200 ${
+        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-all duration-200 ${
           isSelected
             ? "border-purple shadow-[0_0_8px_2px_rgba(111,92,194,0.7)]"
             : "border-purple/40 group-hover:border-purple group-hover:shadow-[0_0_6px_2px_rgba(111,92,194,0.5)]"
@@ -257,7 +257,7 @@ function PredictionRow({
       </div>
 
       {/* Percent */}
-      <span className="w-12 flex-shrink-0 text-right text-sm font-bold text-white">
+      <span className="w-12 shrink-0 text-right text-sm font-bold text-white">
         {percent}%
       </span>
     </button>

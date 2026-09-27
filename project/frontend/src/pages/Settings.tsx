@@ -145,7 +145,11 @@ function Settings() {
               {/* Change password header */}
               <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
                 <div className="flex items-start gap-4">
-                  <img src={lockIcon} alt="" className="mt-2 h-9 w-9" />
+                  <img
+                    src={lockIcon}
+                    alt=""
+                    className="mt-2 h-9 w-9 translate-y-3 md:translate-y-0"
+                  />
 
                   <div>
                     <h2 className="font-heading text-lg uppercase tracking-widest text-purple">
@@ -240,7 +244,7 @@ function Settings() {
                     )}
 
                     {/* Submit */}
-                    <div className="flex justify-end pt-2">
+                    <div className="flex justify-center  md:justify-end pt-2">
                       <button
                         type="button"
                         onClick={handleChangePassword}
@@ -260,7 +264,11 @@ function Settings() {
           <div className="mt-6 border-t border-purple/70 pt-6">
             <div className="flex flex-col justify-between gap-5 border border-red-500/80 px-5 py-5 md:flex-row md:items-center">
               <div className="flex items-start gap-4">
-                <img src={binIcon} alt="" className="mt-2 h-9 w-9" />
+                <img
+                  src={binIcon}
+                  alt=""
+                  className="mt-2 h-9 w-9 translate-y-5.5 md:translate-y-0"
+                />
 
                 <div>
                   <h2 className="font-heading text-lg uppercase tracking-widest text-red-400">

@@ -125,15 +125,15 @@ function CommentRow({
     <>
       <div className="border-t border-purple/20 first:border-t-0">
         {/* Comment */}
-        <div className="px-4 py-4 font-body">
-          <div className="flex items-start gap-3">
-            <div className="flex-1">
-              <p className="text-sm">
+        <div className="px-3 py-3 font-body sm:px-4 sm:py-4">
+          <div className="flex items-start gap-2 sm:gap-3">
+            <div className="min-w-0 flex-1">
+              <p className="text-xs sm:text-sm">
                 <span className="font-semibold uppercase text-purple">
                   {comment.username}
                 </span>
 
-                <span className="ml-2 text-xs text-text">
+                <span className="ml-2 text-[10px] text-text sm:text-xs">
                   • {comment.timeAgo}
                 </span>
               </p>
@@ -155,7 +155,7 @@ function CommentRow({
                       type="button"
                       onClick={handleEdit}
                       disabled={editLoading || !editMessage.trim()}
-                      className="rounded-sm bg-purple px-4 py-1.5 text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="rounded-sm bg-purple px-3 py-1.5 text-[10px] uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:px-4 sm:text-xs"
                     >
                       {editLoading ? "Saving..." : "Save"}
                     </button>
@@ -164,7 +164,7 @@ function CommentRow({
                       type="button"
                       onClick={handleCancelEdit}
                       disabled={editLoading}
-                      className="rounded-sm border border-purple/30 px-4 py-1.5 text-xs uppercase tracking-widest text-text transition-colors hover:border-purple hover:text-white disabled:opacity-50"
+                      className="rounded-sm border border-purple/30 px-3 py-1.5 text-[10px] uppercase tracking-widest text-text transition-colors hover:border-purple hover:text-white disabled:opacity-50 sm:px-4 sm:text-xs"
                     >
                       Cancel
                     </button>
@@ -175,7 +175,9 @@ function CommentRow({
                   )}
                 </div>
               ) : (
-                <p className="mt-1 text-sm text-white">{comment.message}</p>
+                <p className="mt-1 break-words text-sm text-white">
+                  {comment.message}
+                </p>
               )}
             </div>
 
@@ -187,9 +189,9 @@ function CommentRow({
                   setReplyError("");
                   setReplyingTo(isReplying ? null : comment.id);
                 }}
-                className="flex flex-shrink-0 items-center gap-1 text-sm text-purple transition-opacity hover:opacity-80"
+                className="flex shrink-0 items-center gap-1 text-xs text-purple transition-opacity hover:opacity-80 sm:text-sm"
               >
-                <MessageCircle size={14} />
+                <MessageCircle size={13} className="sm:h-[14px] sm:w-[14px]" />
 
                 {isReplying ? "Cancel" : "Reply"}
               </button>
@@ -207,9 +209,9 @@ function CommentRow({
                   setEditing(true);
                 }}
                 disabled={deleteLoading}
-                className="flex items-center gap-1 text-xs text-text transition-colors hover:text-purple disabled:opacity-50"
+                className="flex items-center gap-1 text-[10px] text-text transition-colors hover:text-purple disabled:opacity-50 sm:text-xs"
               >
-                <Pencil size={13} />
+                <Pencil size={12} className="sm:h-[13px] sm:w-[13px]" />
                 Edit
               </button>
 
@@ -220,9 +222,9 @@ function CommentRow({
                   setShowDeleteModal(true);
                 }}
                 disabled={deleteLoading}
-                className="flex items-center gap-1 text-xs text-red-400 transition-colors hover:text-red-300 disabled:cursor-not-allowed disabled:opacity-50"
+                className="flex items-center gap-1 text-[10px] text-red-400 transition-colors hover:text-red-300 disabled:cursor-not-allowed disabled:opacity-50 sm:text-xs"
               >
-                <Trash2 size={13} />
+                <Trash2 size={12} className="sm:h-[13px] sm:w-[13px]" />
 
                 {deleteLoading ? "Deleting..." : "Delete"}
               </button>
@@ -238,15 +240,15 @@ function CommentRow({
 
         {/* Reply input */}
         {isReplying && (
-          <div className="ml-8 border-l border-purple px-4 pb-4">
-            <div className="flex items-center gap-3">
+          <div className="ml-5 border-l border-purple px-3 pb-3 sm:ml-8 sm:px-4 sm:pb-4">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
               <input
                 type="text"
                 value={replyMessage}
                 onChange={(e) => setReplyMessage(e.target.value)}
                 placeholder="Write a reply..."
                 disabled={replyLoading}
-                className="flex-1 rounded-sm border border-purple/30 bg-transparent px-3 py-2 text-sm text-white placeholder:text-text focus:border-purple focus:outline-none disabled:opacity-50"
+                className="min-w-0 flex-1 rounded-sm border border-purple/30 bg-transparent px-3 py-2 text-sm text-white placeholder:text-text focus:border-purple focus:outline-none disabled:opacity-50"
                 autoFocus
               />
 
@@ -254,7 +256,7 @@ function CommentRow({
                 type="button"
                 onClick={handleReplySubmit}
                 disabled={replyLoading || !replyMessage.trim()}
-                className="rounded-sm bg-purple px-5 py-2 text-sm uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full rounded-sm bg-purple px-5 py-2 text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:text-sm"
               >
                 {replyLoading ? "Posting..." : "Reply"}
               </button>
@@ -268,7 +270,7 @@ function CommentRow({
 
         {/* Replies */}
         {comment.replies.length > 0 && (
-          <div className="ml-8 border-l border-purple/80">
+          <div className="ml-5 border-l border-purple/80 sm:ml-8">
             {comment.replies.map((reply) => (
               <CommentRow
                 key={reply.id}
@@ -286,12 +288,12 @@ function CommentRow({
 
       {/* Delete confirmation modal */}
       {showDeleteModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4">
-          <div className="w-full max-w-md rounded-md border border-purple/40 bg-[#0a0d1c] p-6 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-3 sm:px-4">
+          <div className="w-full max-w-md rounded-md border border-purple/40 bg-[#0a0d1c] p-4 shadow-2xl sm:p-6">
             {/* Modal header */}
-            <div className="flex items-start justify-between">
+            <div className="flex items-start justify-between gap-4">
               <div>
-                <h3 className="font-heading text-lg uppercase tracking-widest text-purple">
+                <h3 className="font-heading text-base uppercase tracking-widest text-purple sm:text-lg">
                   Delete Comment
                 </h3>
 
@@ -304,7 +306,7 @@ function CommentRow({
                 type="button"
                 onClick={() => setShowDeleteModal(false)}
                 disabled={deleteLoading}
-                className="text-text transition-colors hover:text-white disabled:opacity-50"
+                className="shrink-0 text-text transition-colors hover:text-white disabled:opacity-50"
                 aria-label="Close"
               >
                 <X size={20} />
@@ -312,21 +314,23 @@ function CommentRow({
             </div>
 
             {/* Comment preview */}
-            <div className="mt-5 rounded-sm border border-purple/20 bg-[#050711] px-4 py-3">
+            <div className="mt-4 rounded-sm border border-purple/20 bg-background px-3 py-3 sm:mt-5 sm:px-4">
               <p className="text-xs font-semibold uppercase text-purple">
                 {comment.username}
               </p>
 
-              <p className="mt-1 text-sm text-white">{comment.message}</p>
+              <p className="mt-1 break-words text-sm text-white">
+                {comment.message}
+              </p>
             </div>
 
             {/* Modal buttons */}
-            <div className="mt-6 flex justify-end gap-3">
+            <div className="mt-5 flex flex-col-reverse gap-2 sm:mt-6 sm:flex-row sm:justify-end sm:gap-3">
               <button
                 type="button"
                 onClick={() => setShowDeleteModal(false)}
                 disabled={deleteLoading}
-                className="rounded-sm border border-purple/30 px-5 py-2 text-sm uppercase tracking-widest text-text transition-colors hover:border-purple hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full rounded-sm border border-purple/30 px-5 py-2 text-xs uppercase tracking-widest text-text transition-colors hover:border-purple hover:text-white disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:text-sm"
               >
                 Cancel
               </button>
@@ -335,7 +339,7 @@ function CommentRow({
                 type="button"
                 onClick={handleDelete}
                 disabled={deleteLoading}
-                className="flex items-center gap-2 rounded-sm bg-red-500 px-5 py-2 text-sm uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                className="flex w-full items-center justify-center gap-2 rounded-sm bg-red-500 px-5 py-2 text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:text-sm"
               >
                 <Trash2 size={14} />
 
@@ -442,19 +446,19 @@ function DiscussionSection({
   };
 
   return (
-    <div className="mx-auto mt-10 max-w-6xl px-6 font-body">
+    <div className="mx-auto mt-8 max-w-6xl px-3 font-body sm:mt-10 sm:px-6">
       {/* Header */}
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-3 flex flex-col gap-2 sm:mb-4 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
         <div className="flex items-center gap-2">
-          <img src={discussionIcon} alt="" className="h-6 w-6" />
+          <img src={discussionIcon} alt="" className="h-5 w-5 sm:h-6 sm:w-6" />
 
-          <h2 className="font-heading text-lg uppercase tracking-widest text-purple">
+          <h2 className="font-heading text-base uppercase tracking-widest text-purple sm:text-lg">
             Discussion
           </h2>
         </div>
 
         {readOnly && (
-          <span className="text-sm tracking-widest text-red-400">
+          <span className="text-[10px] leading-relaxed tracking-widest text-red-400 sm:text-sm">
             Comments have been closed as the fight is over!
           </span>
         )}
@@ -465,11 +469,11 @@ function DiscussionSection({
         {/* Scrollable comments list */}
         <div className="max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-purple/40 hover:scrollbar-thumb-purple/60">
           {loading ? (
-            <div className="px-4 py-6 text-center text-sm text-text">
+            <div className="px-3 py-5 text-center text-sm text-text sm:px-4 sm:py-6">
               Loading comments...
             </div>
           ) : comments.length === 0 ? (
-            <div className="px-4 py-6 text-center text-sm text-text">
+            <div className="px-3 py-5 text-center text-sm text-text sm:px-4 sm:py-6">
               No comments yet.
             </div>
           ) : (
@@ -489,8 +493,8 @@ function DiscussionSection({
 
         {/* New comment input */}
         {!readOnly && (
-          <div className="border-t border-purple/20 px-4 py-4">
-            <div className="flex items-center gap-3">
+          <div className="border-t border-purple/20 px-3 py-3 sm:px-4 sm:py-4">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
               <input
                 type="text"
                 value={message}
@@ -500,14 +504,14 @@ function DiscussionSection({
                 }}
                 placeholder="Write a message..."
                 disabled={postLoading}
-                className="flex-1 rounded-sm border border-purple/30 bg-transparent px-3 py-2 text-sm text-white placeholder:text-text focus:border-purple focus:outline-none disabled:opacity-50"
+                className="min-w-0 flex-1 rounded-sm border border-purple/30 bg-transparent px-3 py-2 text-sm text-white placeholder:text-text focus:border-purple focus:outline-none disabled:opacity-50"
               />
 
               <button
                 type="button"
                 onClick={handlePost}
                 disabled={postLoading || !message.trim()}
-                className="rounded-sm bg-purple px-6 py-2 text-sm uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full rounded-sm bg-purple px-6 py-2 text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:text-sm"
               >
                 {postLoading ? "Posting..." : "Post"}
               </button>
