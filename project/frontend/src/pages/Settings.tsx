@@ -1,9 +1,6 @@
 import { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
-
 import { useQueryClient } from "@tanstack/react-query";
-
 import axios from "axios";
 
 import binIcon from "../assets/bin.svg";
@@ -31,6 +28,10 @@ function Settings() {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [deleteError, setDeleteError] = useState("");
+
+  const [resendLoading, setResendLoading] = useState(false);
+  const [resendError, setResendError] = useState("");
+  const [resendModalOpen, setResendModalOpen] = useState(false);
 
   const handleChangePassword = async () => {
     try {
@@ -62,6 +63,30 @@ function Settings() {
       }
     } finally {
       setPasswordLoading(false);
+    }
+  };
+
+  const handleResendVerification = async () => {
+    try {
+      setResendLoading(true);
+      setResendError("");
+
+      await api.post("/api/email/verification-notification");
+
+      setResendModalOpen(true);
+    } catch (error: unknown) {
+      console.error("Resending verification email failed:", error);
+
+      if (axios.isAxiosError(error)) {
+        setResendError(
+          error.response?.data?.message ||
+            "Failed to send verification email. Please try again.",
+        );
+      } else {
+        setResendError("Failed to send verification email. Please try again.");
+      }
+    } finally {
+      setResendLoading(false);
     }
   };
 
@@ -136,6 +161,32 @@ function Settings() {
               <div className="mt-2 border border-purple/70 px-4 py-4 font-body text-base text-text">
                 {user?.email}
               </div>
+
+              {/* Email verification status */}
+              {user?.email_verified ? (
+                <p className="mt-2 font-body text-sm text-green-400">
+                  EMAIL VERIFIED
+                </p>
+              ) : (
+                <div className="mt-2">
+                  <button
+                    type="button"
+                    onClick={handleResendVerification}
+                    disabled={resendLoading}
+                    className="font-body text-left text-sm text-red-400 underline decoration-red-400 underline-offset-4 transition-colors hover:text-red-300 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {resendLoading
+                      ? "SENDING VERIFICATION EMAIL..."
+                      : "EMAIL NOT VERIFIED — CLICK TO RESEND VERIFICATION EMAIL"}
+                  </button>
+
+                  {resendError && (
+                    <p className="mt-2 font-body text-sm text-red-400">
+                      {resendError}
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 
@@ -244,7 +295,7 @@ function Settings() {
                     )}
 
                     {/* Submit */}
-                    <div className="flex justify-center  md:justify-end pt-2">
+                    <div className="flex justify-center pt-2 md:justify-end">
                       <button
                         type="button"
                         onClick={handleChangePassword}
@@ -296,6 +347,33 @@ function Settings() {
           </div>
         </div>
       </div>
+
+      {/* Verification email sent modal */}
+      {resendModalOpen && (
+        <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/70 px-6">
+          <div className="w-full max-w-md border border-green-500 bg-background p-6">
+            <h2 className="font-heading text-xl uppercase tracking-widest text-green-400">
+              Email Sent!
+            </h2>
+
+            <p className="mt-3 font-body text-sm leading-6 text-text">
+              A new verification email has been sent to your email address.
+              Please check your inbox and follow the link to verify your
+              account.
+            </p>
+
+            <div className="mt-6 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setResendModalOpen(false)}
+                className="border border-green-500 bg-green-500/10 px-5 py-2 font-body text-sm uppercase tracking-widest text-green-400 transition-colors hover:bg-green-500/20"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Delete confirmation modal */}
       {deleteModalOpen && (
