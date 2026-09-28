@@ -96,6 +96,7 @@ function LoginForm({ onSwitch }: { onSwitch: () => void }) {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -171,6 +172,7 @@ function LoginForm({ onSwitch }: { onSwitch: () => void }) {
         </div>
 
         {error && <p className="text-sm text-red-400">{error}</p>}
+
         <button
           type="submit"
           disabled={loading}
@@ -211,6 +213,10 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const [registered, setRegistered] = useState(false);
+  const [resendMessage, setResendMessage] = useState("");
+  const [resending, setResending] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -237,8 +243,8 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
 
       console.log("Registration successful:", response.data);
 
-      // Laravel has authenticated the user and created the session.
-      window.location.href = "/";
+      // Show the email verification screen
+      setRegistered(true);
     } catch (error: unknown) {
       console.error("Registration error:", error);
 
@@ -264,6 +270,66 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
       setLoading(false);
     }
   };
+
+  const handleResendVerification = async () => {
+    setResendMessage("");
+
+    try {
+      setResending(true);
+
+      await api.post("/api/email/verification-notification");
+
+      setResendMessage("A new verification email has been sent.");
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        setResendMessage(
+          error.response?.data?.message ||
+            "Could not resend the email. Please try again.",
+        );
+      } else {
+        setResendMessage("Something went wrong. Please try again.");
+      }
+    } finally {
+      setResending(false);
+    }
+  };
+
+  if (registered) {
+    return (
+      <div className="text-center">
+        <AuthGlovesHeader
+          title="Check Your Email"
+          subtitle="You're nearly ready to join FightCard."
+        />
+
+        <div className="mt-8">
+          <Mail size={40} className="mx-auto text-purple" />
+
+          <p className="mt-5 text-white">We've sent a verification link to:</p>
+
+          <p className="mt-2 break-all font-semibold text-purple">{email}</p>
+
+          <p className="mt-5 text-sm text-text">
+            Click the link in the email to verify your account. You can close
+            this page after receiving it.
+          </p>
+
+          <button
+            type="button"
+            onClick={handleResendVerification}
+            disabled={resending}
+            className="mt-6 w-full rounded-sm border border-purple bg-purple/80 py-3 text-sm uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {resending ? "Sending..." : "Resend Verification Email"}
+          </button>
+
+          {resendMessage && (
+            <p className="mt-4 text-sm text-text">{resendMessage}</p>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>

@@ -9,7 +9,7 @@ import Contact from "./pages/Contact";
 import Auth from "./pages/Auth";
 import Footer from "./components/Footer";
 import Settings from "./pages/Settings";
-
+import EmailVerified from "./pages/EmailVerified";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PublicOnlyRoute from "./components/PublicOnlyRoute";
 
@@ -24,6 +24,7 @@ function App() {
         <Route path="/fights/:id" element={<FightDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/email-verified" element={<EmailVerified />} />
 
         {/* Logged-out users only */}
         <Route element={<PublicOnlyRoute />}>

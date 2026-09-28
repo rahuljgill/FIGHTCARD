@@ -27,17 +27,19 @@ class AuthController extends Controller
 ],
         ]);
 
-        $user = User::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'password' => Hash::make($validated['password']),
-        ]);
+       $user = User::create([
+    'name' => $validated['name'],
+    'email' => $validated['email'],
+    'password' => Hash::make($validated['password']),
+]);
 
-        Auth::login($user);
+Auth::login($user);
 
-        return response()->json([
-            'user' => $user,
-        ], 201);
+$user->sendEmailVerificationNotification();
+
+return response()->json([
+    'user' => $user,
+], 201);
     }
 
     public function login(Request $request)
