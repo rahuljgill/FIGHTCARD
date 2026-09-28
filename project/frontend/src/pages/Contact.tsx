@@ -7,10 +7,42 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // I'LL CONNECT CONTACT FROM LATER.
+
+    setIsSubmitting(true);
+    setStatus(null);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xkjgkgkb", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message.");
+      }
+
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      setStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -55,6 +87,7 @@ function Contact() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter your name"
+                    required
                     className="flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
                   />
                 </div>
@@ -69,6 +102,7 @@ function Contact() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
+                    required
                     className="flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
                   />
                 </div>
@@ -83,17 +117,33 @@ function Contact() {
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Type your message here..."
                     rows={5}
+                    required
                     className="flex-1 resize-y bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
                   />
                 </div>
               </div>
 
+              {status === "success" && (
+                <p className="text-sm text-green-400" role="status">
+                  Your message has been sent successfully. Thank you for getting
+                  in touch!
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="text-sm text-red-400" role="alert">
+                  Something went wrong while sending your message. Please try
+                  again.
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="mt-2 flex items-center justify-center gap-2 rounded-sm border border-purple bg-purple/80 px-6 py-3 text-sm uppercase tracking-widest text-white transition-opacity hover:opacity-90"
+                disabled={isSubmitting}
+                className="mt-2 flex items-center justify-center gap-2 rounded-sm border border-purple bg-purple/80 px-6 py-3 text-sm uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
               >
-                Send Message
-                <ArrowRight size={16} />
+                {isSubmitting ? "Sending..." : "Send Message"}
+                {!isSubmitting && <ArrowRight size={16} />}
               </button>
             </form>
           </div>

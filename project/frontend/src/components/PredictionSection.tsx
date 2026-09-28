@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import bars2 from "../assets/bars2.svg";
 
@@ -49,8 +50,11 @@ function PredictionSection({
   );
 
   const [loginMessage, setLoginMessage] = useState(false);
+  const [verificationMessage, setVerificationMessage] = useState(false);
 
   const { data: currentUser, isLoading: userLoading } = useCurrentUser();
+
+  const currentUserVerified = currentUser?.email_verified === true;
 
   useEffect(() => {
     const fetchPredictions = async () => {
@@ -93,6 +97,13 @@ function PredictionSection({
 
     if (!currentUser) {
       setLoginMessage(true);
+      setVerificationMessage(false);
+      return;
+    }
+
+    if (!currentUserVerified) {
+      setVerificationMessage(true);
+      setLoginMessage(false);
       return;
     }
 
@@ -105,6 +116,7 @@ function PredictionSection({
 
       setUserVote(choice);
       setLoginMessage(false);
+      setVerificationMessage(false);
 
       // Add the new vote locally.
       if (choice === "fighter1") {
@@ -182,10 +194,21 @@ function PredictionSection({
                   ? ""
                   : userVote
                     ? "You have already voted for this."
-                    : loginMessage
-                      ? "Log in to cast your vote."
-                      : "Cast your vote and see what the community thinks."}
+                    : verificationMessage
+                      ? "Please verify your email address before voting."
+                      : loginMessage
+                        ? "Log in to cast your vote."
+                        : "Cast your vote and see what the community thinks."}
               </p>
+
+              {verificationMessage && (
+                <Link
+                  to="/settings"
+                  className="mt-2 inline-block text-sm font-semibold text-purple underline underline-offset-4 transition-opacity hover:opacity-80"
+                >
+                  Go to My Settings
+                </Link>
+              )}
             </div>
           </div>
 

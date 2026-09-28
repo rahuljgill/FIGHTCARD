@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import { MessageCircle, Pencil, Trash2, X } from "lucide-react";
 
 import discussionIcon from "../assets/discussion.svg";
-
 import api from "../api/client";
 import { useCurrentUser } from "../api/useCurrentUser";
 
@@ -19,6 +18,7 @@ interface CommentRowProps {
   comment: Comment;
   fightId: string;
   currentUsername: string | null;
+  currentUserVerified: boolean;
   replyingTo: number | null;
   setReplyingTo: (id: number | null) => void;
   onCommentPosted: () => void;
@@ -28,6 +28,7 @@ function CommentRow({
   comment,
   fightId,
   currentUsername,
+  currentUserVerified,
   replyingTo,
   setReplyingTo,
   onCommentPosted,
@@ -54,6 +55,11 @@ function CommentRow({
 
     if (!currentUsername) {
       setReplyError("Please log in to post a reply.");
+      return;
+    }
+
+    if (!currentUserVerified) {
+      setReplyError("Please verify your email address before replying.");
       return;
     }
 
@@ -182,7 +188,7 @@ function CommentRow({
             </div>
 
             {/* Reply */}
-            {!editing && (
+            {!editing && currentUserVerified && (
               <button
                 type="button"
                 onClick={() => {
@@ -192,7 +198,6 @@ function CommentRow({
                 className="flex shrink-0 items-center gap-1 text-xs text-purple transition-opacity hover:opacity-80 sm:text-sm"
               >
                 <MessageCircle size={13} className="sm:h-3.5 sm:w-3.5" />
-
                 {isReplying ? "Cancel" : "Reply"}
               </button>
             )}
@@ -225,7 +230,6 @@ function CommentRow({
                 className="flex items-center gap-1 text-[10px] text-red-400 transition-colors hover:text-red-300 disabled:cursor-not-allowed disabled:opacity-50 sm:text-xs"
               >
                 <Trash2 size={12} className="sm:h-3.25 sm:w-3.25" />
-
                 {deleteLoading ? "Deleting..." : "Delete"}
               </button>
             </div>
@@ -277,6 +281,7 @@ function CommentRow({
                 comment={reply}
                 fightId={fightId}
                 currentUsername={currentUsername}
+                currentUserVerified={currentUserVerified}
                 replyingTo={replyingTo}
                 setReplyingTo={setReplyingTo}
                 onCommentPosted={onCommentPosted}
@@ -342,7 +347,6 @@ function CommentRow({
                 className="flex w-full items-center justify-center gap-2 rounded-sm bg-red-500 px-5 py-2 text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:text-sm"
               >
                 <Trash2 size={14} />
-
                 {deleteLoading ? "Deleting..." : "Delete Comment"}
               </button>
             </div>
@@ -379,6 +383,7 @@ function DiscussionSection({
   const [replyingTo, setReplyingTo] = useState<number | null>(null);
 
   const currentUsername = user?.name ?? null;
+  const currentUserVerified = user?.email_verified === true;
 
   useEffect(() => {
     let cancelled = false;
@@ -422,6 +427,11 @@ function DiscussionSection({
 
     if (!user) {
       setPostError("Please log in to post a message.");
+      return;
+    }
+
+    if (!currentUserVerified) {
+      setPostError("Please verify your email address before posting.");
       return;
     }
 
@@ -483,6 +493,7 @@ function DiscussionSection({
                 comment={comment}
                 fightId={fightId}
                 currentUsername={currentUsername}
+                currentUserVerified={currentUserVerified}
                 replyingTo={replyingTo}
                 setReplyingTo={setReplyingTo}
                 onCommentPosted={refreshComments}
@@ -494,31 +505,53 @@ function DiscussionSection({
         {/* New comment input */}
         {!readOnly && (
           <div className="border-t border-purple/20 px-3 py-3 sm:px-4 sm:py-4">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-              <input
-                type="text"
-                value={message}
-                onChange={(e) => {
-                  setMessage(e.target.value);
-                  setPostError("");
-                }}
-                placeholder="Write a message..."
-                disabled={postLoading}
-                className="min-w-0 flex-1 rounded-sm border border-purple/30 bg-transparent px-3 py-2 text-sm text-white placeholder:text-text focus:border-purple focus:outline-none disabled:opacity-50"
-              />
+            {user && !currentUserVerified ? (
+              <div className="text-center">
+                <p className="font-heading text-sm uppercase tracking-widest text-red-400">
+                  Email Verification Required
+                </p>
 
-              <button
-                type="button"
-                onClick={handlePost}
-                disabled={postLoading || !message.trim()}
-                className="w-full rounded-sm bg-purple px-6 py-2 text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:text-sm"
-              >
-                {postLoading ? "Posting..." : "Post"}
-              </button>
-            </div>
+                <p className="mt-2 text-sm text-text">
+                  Please verify your email address before joining the
+                  discussion.
+                </p>
 
-            {postError && (
-              <p className="mt-2 text-sm text-red-400">{postError}</p>
+                <Link
+                  to="/settings"
+                  className="mt-3 inline-block text-sm font-semibold text-purple underline underline-offset-4 transition-opacity hover:opacity-80"
+                >
+                  Go to My Settings
+                </Link>
+              </div>
+            ) : (
+              <>
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+                  <input
+                    type="text"
+                    value={message}
+                    onChange={(e) => {
+                      setMessage(e.target.value);
+                      setPostError("");
+                    }}
+                    placeholder="Write a message..."
+                    disabled={postLoading}
+                    className="min-w-0 flex-1 rounded-sm border border-purple/30 bg-transparent px-3 py-2 text-sm text-white placeholder:text-text focus:border-purple focus:outline-none disabled:opacity-50"
+                  />
+
+                  <button
+                    type="button"
+                    onClick={handlePost}
+                    disabled={postLoading || !message.trim()}
+                    className="w-full rounded-sm bg-purple px-6 py-2 text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:text-sm"
+                  >
+                    {postLoading ? "Posting..." : "Post"}
+                  </button>
+                </div>
+
+                {postError && (
+                  <p className="mt-2 text-sm text-red-400">{postError}</p>
+                )}
+              </>
             )}
           </div>
         )}
