@@ -1,17 +1,8 @@
 import type { Bout } from "../types/fight";
-import { getFighterById } from "../data/fighters";
 
 function UndercardRow({ bout }: { bout: Bout }) {
-  const fighter1 = getFighterById(bout.fighter_1);
-  const fighter2 = getFighterById(bout.fighter_2);
-
-  const name1 = fighter1
-    ? `${fighter1.first_name} ${fighter1.last_name}`
-    : "TBA";
-
-  const name2 = fighter2
-    ? `${fighter2.first_name} ${fighter2.last_name}`
-    : "TBA";
+  const name1 = bout.fighter_1;
+  const name2 = bout.fighter_2;
 
   const winner = bout.result?.winner ?? null;
 
@@ -55,7 +46,7 @@ function UndercardRow({ bout }: { bout: Bout }) {
           {/* Fighter 2 */}
           <div className="min-w-0 flex-1">
             <p
-              className={`truncate text-xs uppercase sm:text-base  ${
+              className={`truncate text-xs uppercase sm:text-base ${
                 fighter2Won ? "text-green-300 underline" : "text-white"
               }`}
             >

@@ -25,8 +25,8 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "ricardo-sandoval",
-          "fighter_2": "sergio-mendoza",
+          "fighter_1": "ricardo sandoval",
+          "fighter_2": "sergio mendoza",
           "scheduled_rounds": 12,
           "title": "Sandoval's WBA and WBC Flyweight Titles",
           "result": {
@@ -37,8 +37,8 @@
         },
         {
           "order": 2,
-          "fighter_1": "jahmal-harvey",
-          "fighter_2": "pedro-castaneda",
+          "fighter_1": "jahmal harvey",
+          "fighter_2": "pedro castaneda",
           "scheduled_rounds": 8,
           "title": "Lightweights Bout",
           "result": {
@@ -49,8 +49,8 @@
         },
         {
           "order": 3,
-          "fighter_1": "jan-paul-rivera",
-          "fighter_2": "abraham-perfecto",
+          "fighter_1": "jan-paul rivera",
+          "fighter_2": "abraham perfecto",
           "scheduled_rounds": 10,
           "title": "Junior Lightweights Bout",
           "result": {
@@ -61,8 +61,8 @@
         },
         {
           "order": 4,
-          "fighter_1": "joshua-edwards",
-          "fighter_2": "craig-lewis",
+          "fighter_1": "joshua edwards",
+          "fighter_2": "craig lewis",
           "scheduled_rounds": 8,
           "title": "Heavyweights Bout",
           "result": {
@@ -73,8 +73,8 @@
         },
         {
           "order": 5,
-          "fighter_1": "tristan-kalkreuth",
-          "fighter_2": "ivan-rosado",
+          "fighter_1": "tristan kalkreuth",
+          "fighter_2": "ivan rosado",
           "scheduled_rounds": 10,
           "title": "Cruiserweights Bout",
           "result": {
@@ -85,8 +85,8 @@
         },
         {
           "order": 6,
-          "fighter_1": "grant-flores",
-          "fighter_2": "mikey-dahlman",
+          "fighter_1": "grant flores",
+          "fighter_2": "mikey dahlman",
           "scheduled_rounds": 10,
           "title": "Middleweights Bout",
           "result": {
@@ -97,8 +97,8 @@
         },
         {
           "order": 7,
-          "fighter_1": "naomy-valle",
-          "fighter_2": "sheyla-moreno",
+          "fighter_1": "naomy valle",
+          "fighter_2": "sheyla moreno",
           "scheduled_rounds": 8,
           "title": "Women's Flyweights Bout",
           "result": {
@@ -134,8 +134,8 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "louie-odoherty",
-          "fighter_2": "michael-gomez-jr",
+          "fighter_1": "louie odoherty",
+          "fighter_2": "michael gomez jr",
           "scheduled_rounds": 12,
           "title": "Lightweights Bout",
           "result": {
@@ -146,8 +146,8 @@
         },
         {
           "order": 2,
-          "fighter_1": "bakhodir-jalolov",
-          "fighter_2": "solomon-dacres",
+          "fighter_1": "bakhodir jalolov",
+          "fighter_2": "solomon dacres",
           "scheduled_rounds": 10,
           "title": "Heavyweights Bout",
           "result": {
@@ -158,8 +158,8 @@
         },
         {
           "order": 3,
-          "fighter_1": "tony-curtis",
-          "fighter_2": "kerim-agius",
+          "fighter_1": "tony curtis",
+          "fighter_2": "kerim agius",
           "scheduled_rounds": 8,
           "title": "Junior Bantamweights Bout",
           "result": {
@@ -170,7 +170,7 @@
         },
         {
           "order": 4,
-          "fighter_1": "manny-safari",
+          "fighter_1": "manny safari",
           "fighter_2": "tba",
           "scheduled_rounds": 4,
           "title": "Bantamweights Bout",
@@ -207,8 +207,8 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "brandon-figueroa",
-          "fighter_2": "tomoki-kameda",
+          "fighter_1": "brandon figueroa",
+          "fighter_2": "tomoki kameda",
           "scheduled_rounds": 12,
           "title": "Figueroa's WBA Featherweight Title",
           "result": {
@@ -219,8 +219,8 @@
         },
         {
           "order": 2,
-          "fighter_1": "jermall-charlo",
-          "fighter_2": "koen-mazoudier",
+          "fighter_1": "jermall charlo",
+          "fighter_2": "koen mazoudier",
           "scheduled_rounds": 10,
           "title": "Super Middleweights Bout",
           "result": {
@@ -256,7 +256,7 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "marie-pier-houle",
+          "fighter_1": "marie pier houle",
           "fighter_2": "tba",
           "scheduled_rounds": 10,
           "title": "Women's Welterweights Bout",
@@ -268,7 +268,7 @@
         },
         {
           "order": 2,
-          "fighter_1": "kirill-bazhenov",
+          "fighter_1": "kirill bazhenov",
           "fighter_2": "tba",
           "scheduled_rounds": 6,
           "title": "Junior Lightweights Bout",
@@ -280,7 +280,7 @@
         },
         {
           "order": 3,
-          "fighter_1": "cedrick-belony-duliepre",
+          "fighter_1": "cedrick belony duliepre",
           "fighter_2": "tba",
           "scheduled_rounds": 4,
           "title": "Super Middleweights Bout",
@@ -292,7 +292,7 @@
         },
         {
           "order": 4,
-          "fighter_1": "alessia-mansueto",
+          "fighter_1": "alessia mansueto",
           "fighter_2": "tba",
           "scheduled_rounds": 4,
           "title": "Women's Junior Lightweights Bout",
@@ -329,8 +329,8 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "giorgio-visioli",
-          "fighter_2": "maxi-hughes",
+          "fighter_1": "giorgio visioli",
+          "fighter_2": "maxi hughes",
           "scheduled_rounds": 10,
           "title": "Lightweights Bout",
           "result": {
@@ -341,8 +341,8 @@
         },
         {
           "order": 2,
-          "fighter_1": "shannon-ryan",
-          "fighter_2": "emma-dolan",
+          "fighter_1": "shannon ryan",
+          "fighter_2": "emma dolan",
           "scheduled_rounds": 10,
           "title": "Women's Junior Bantamweights Bout",
           "result": {
@@ -353,8 +353,8 @@
         },
         {
           "order": 3,
-          "fighter_1": "edward-hardy",
-          "fighter_2": "ibrahim-nadim",
+          "fighter_1": "edward hardy",
+          "fighter_2": "ibrahim nadim",
           "scheduled_rounds": 10,
           "title": "Junior Lightweights Bout",
           "result": {
@@ -365,8 +365,8 @@
         },
         {
           "order": 4,
-          "fighter_1": "aqib-fiaz",
-          "fighter_2": "jordan-flynn",
+          "fighter_1": "aqib fiaz",
+          "fighter_2": "jordan flynn",
           "scheduled_rounds": 10,
           "title": "Junior Lightweights Bout",
           "result": {
@@ -377,8 +377,8 @@
         },
         {
           "order": 5,
-          "fighter_1": "joe-hayden",
-          "fighter_2": "will-harrison",
+          "fighter_1": "joe hayden",
+          "fighter_2": "will harrison",
           "scheduled_rounds": 8,
           "title": "Welterweights Bout",
           "result": {
@@ -389,7 +389,7 @@
         },
         {
           "order": 6,
-          "fighter_1": "leo-atang",
+          "fighter_1": "leo atang",
           "fighter_2": "tba",
           "scheduled_rounds": 6,
           "title": "Heavyweights Bout",
@@ -401,7 +401,7 @@
         },
         {
           "order": 7,
-          "fighter_1": "chris-mulunda",
+          "fighter_1": "chris mulunda",
           "fighter_2": "tba",
           "scheduled_rounds": 4,
           "title": "Middleweights Bout",
@@ -438,8 +438,8 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "frank-martin",
-          "fighter_2": "tarik-zaina",
+          "fighter_1": "frank martin",
+          "fighter_2": "tarik zaina",
           "scheduled_rounds": 10,
           "title": "Junior Welterweights Bout",
           "result": {
@@ -450,8 +450,8 @@
         },
         {
           "order": 2,
-          "fighter_1": "albert-gonzalez",
-          "fighter_2": "edward-vazquez",
+          "fighter_1": "albert gonzalez",
+          "fighter_2": "edward vazquez",
           "scheduled_rounds": 10,
           "title": "Featherweights Bout",
           "result": {
@@ -511,8 +511,8 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "tiara-brown",
-          "fighter_2": "ellie-scotney",
+          "fighter_1": "tiara brown",
+          "fighter_2": "ellie scotney",
           "scheduled_rounds": 10,
           "title": "Brown's WBC Women's Featherweight Title",
           "result": {
@@ -523,8 +523,8 @@
         },
         {
           "order": 2,
-          "fighter_1": "skye-nicolson",
-          "fighter_2": "miyo-yoshida",
+          "fighter_1": "skye nicolson",
+          "fighter_2": "miyo yoshida",
           "scheduled_rounds": 10,
           "title": "Nicolson's WBC Junior Featherweight Title",
           "result": {
@@ -535,8 +535,8 @@
         },
         {
           "order": 3,
-          "fighter_1": "ramla-ali",
-          "fighter_2": "mikiah-kreps",
+          "fighter_1": "ramla ali",
+          "fighter_2": "mikiah kreps",
           "scheduled_rounds": 10,
           "title": "Vacant WBO and IBF Women's Junior Featherweight Titles",
           "result": {
@@ -547,7 +547,7 @@
         },
         {
           "order": 4,
-          "fighter_1": "javier-guerrero-cruz",
+          "fighter_1": "javier guerrero cruz",
           "fighter_2": "tba",
           "scheduled_rounds": 6,
           "title": "Welterweights Bout",
@@ -584,8 +584,8 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "wilkens-mathieu",
-          "fighter_2": "vladimir-shishkin",
+          "fighter_1": "wilkens mathieu",
+          "fighter_2": "vladimir shishkin",
           "scheduled_rounds": 10,
           "title": "Super Middleweights Bout",
           "result": {
@@ -596,8 +596,8 @@
         },
         {
           "order": 2,
-          "fighter_1": "luis-santana",
-          "fighter_2": "dzmitry-asanau",
+          "fighter_1": "luis santana",
+          "fighter_2": "dzmitry asanau",
           "scheduled_rounds": 10,
           "title": "Lightweights Bout",
           "result": {
@@ -608,8 +608,8 @@
         },
         {
           "order": 3,
-          "fighter_1": "imam-khataev",
-          "fighter_2": "padraig-mccrory",
+          "fighter_1": "imam khataev",
+          "fighter_2": "padraig mccrory",
           "scheduled_rounds": 10,
           "title": "Light Heavyweights Bout",
           "result": {
@@ -620,8 +620,8 @@
         },
         {
           "order": 4,
-          "fighter_1": "leila-beaudoin",
-          "fighter_2": "brisa-abigail-rosario-alfonzo",
+          "fighter_1": "leila beaudoin",
+          "fighter_2": "brisa abigail rosario alfonzo",
           "scheduled_rounds": 10,
           "title": "Beaudoin's WBA Women's Interim Junior Lightweight Title",
           "result": {
@@ -632,8 +632,8 @@
         },
         {
           "order": 5,
-          "fighter_1": "thomas-chabot",
-          "fighter_2": "jose-antonio-sanchez-romero",
+          "fighter_1": "thomas chabot",
+          "fighter_2": "jose antonio sanchez romero",
           "scheduled_rounds": 10,
           "title": "Featherweights Bout",
           "result": {
@@ -644,8 +644,8 @@
         },
         {
           "order": 6,
-          "fighter_1": "erik-israyelyan",
-          "fighter_2": "jesse-frank-sallows",
+          "fighter_1": "erik israyelyan",
+          "fighter_2": "jesse frank sallows",
           "scheduled_rounds": 6,
           "title": "Junior Lightweights Bout",
           "result": {
@@ -656,8 +656,8 @@
         },
         {
           "order": 7,
-          "fighter_1": "daylen-pepin",
-          "fighter_2": "matias-pinilla",
+          "fighter_1": "daylen pepin",
+          "fighter_2": "matias pinilla",
           "scheduled_rounds": 4,
           "title": "Lightweights Bout",
           "result": {
@@ -668,8 +668,8 @@
         },
         {
           "order": 8,
-          "fighter_1": "jacob-blais",
-          "fighter_2": "yoan-trottier",
+          "fighter_1": "jacob blais",
+          "fighter_2": "yoan trottier",
           "scheduled_rounds": 4,
           "title": "Welterweights Bout",
           "result": {
@@ -705,8 +705,8 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "jack-rafferty",
-          "fighter_2": "hovhannes-martirosyan",
+          "fighter_1": "jack rafferty",
+          "fighter_2": "hovhannes martirosyan",
           "scheduled_rounds": 12,
           "title": "Welterweights Bout",
           "result": {
@@ -742,8 +742,8 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "zach-parker",
-          "fighter_2": "umar-dzambekov",
+          "fighter_1": "zach parker",
+          "fighter_2": "umar dzambekov",
           "scheduled_rounds": 10,
           "title": "Light Heavyweights Bout",
           "result": {
@@ -754,8 +754,8 @@
         },
         {
           "order": 2,
-          "fighter_1": "lucas-roehrig",
-          "fighter_2": "connal-mcdonald",
+          "fighter_1": "lucas roehrig",
+          "fighter_2": "connal mcdonald",
           "scheduled_rounds": 8,
           "title": "Cruiserweights Bout",
           "result": {
@@ -766,7 +766,7 @@
         },
         {
           "order": 3,
-          "fighter_1": "damazion-vanhouter",
+          "fighter_1": "damazion vanhouter",
           "fighter_2": "tba",
           "scheduled_rounds": 8,
           "title": "Heavyweights Bout",
@@ -778,7 +778,7 @@
         },
         {
           "order": 4,
-          "fighter_1": "sam-hickey",
+          "fighter_1": "sam hickey",
           "fighter_2": "tba",
           "scheduled_rounds": 8,
           "title": "Middleweights Bout",
@@ -839,7 +839,7 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "jhon-orobio",
+          "fighter_1": "jhon orobio",
           "fighter_2": "tba",
           "scheduled_rounds": 10,
           "title": "Junior Welterweights Bout",
@@ -851,7 +851,7 @@
         },
         {
           "order": 2,
-          "fighter_1": "lenar-perez",
+          "fighter_1": "lenar perez",
           "fighter_2": "tba",
           "scheduled_rounds": 10,
           "title": "Cruiserweights Bout",
@@ -863,7 +863,7 @@
         },
         {
           "order": 3,
-          "fighter_1": "avery-martin-duval",
+          "fighter_1": "avery martin duval",
           "fighter_2": "tba",
           "scheduled_rounds": 10,
           "title": "Lightweights Bout",
@@ -875,7 +875,7 @@
         },
         {
           "order": 4,
-          "fighter_1": "wyatt-sanford",
+          "fighter_1": "wyatt sanford",
           "fighter_2": "tba",
           "scheduled_rounds": 8,
           "title": "Lightweights Bout",
@@ -887,7 +887,7 @@
         },
         {
           "order": 5,
-          "fighter_1": "keven-beausejour",
+          "fighter_1": "keven beausejour",
           "fighter_2": "tba",
           "scheduled_rounds": 4,
           "title": "Super Middleweights Bout",
@@ -899,7 +899,7 @@
         },
         {
           "order": 6,
-          "fighter_1": "nickenson-denis",
+          "fighter_1": "nickenson denis",
           "fighter_2": "tba",
           "scheduled_rounds": 4,
           "title": "Super Middleweights Bout",
