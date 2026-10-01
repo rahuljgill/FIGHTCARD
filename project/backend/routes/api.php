@@ -15,6 +15,7 @@ Route::get('/user', function (Request $request) {
         $user->toArray(),
         [
             'email_verified' => $user->hasVerifiedEmail(),
+            'is_admin' => $user->is_admin,
         ]
     ));
 })->middleware('auth:sanctum');

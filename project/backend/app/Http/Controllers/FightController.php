@@ -24,21 +24,22 @@ class FightController extends Controller
         );
     }
 
-    private function formatComment(Comment $comment): array
-    {
-        return [
-    'id' => $comment->id,
-    'userId' => $comment->user_id,
-    'username' => $comment->user->name,
-    'timeAgo' => $comment->created_at->diffForHumans(),
-    'message' => $comment->body,
+   private function formatComment(Comment $comment): array
+{
+    return [
+        'id' => $comment->id,
+        'userId' => $comment->user_id,
+        'username' => $comment->user->name,
+        'is_admin' => (bool) $comment->user->is_admin,
+        'timeAgo' => $comment->created_at->diffForHumans(),
+        'message' => $comment->body,
 
-    'replies' => $comment->replies
-        ->sortBy('created_at')
-        ->map(fn ($reply) => $this->formatComment($reply))
-        ->values(),
-];
-    }
+        'replies' => $comment->replies
+            ->sortBy('created_at')
+            ->map(fn ($reply) => $this->formatComment($reply))
+            ->values(),
+    ];
+}
 
    public function predictions(Request $request, string $fightId)
 {

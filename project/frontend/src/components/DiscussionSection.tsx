@@ -9,6 +9,7 @@ import { useCurrentUser } from "../api/useCurrentUser";
 interface Comment {
   id: number;
   username: string;
+  is_admin: boolean;
   timeAgo: string;
   message: string;
   replies: Comment[];
@@ -135,8 +136,19 @@ function CommentRow({
           <div className="flex items-start gap-2 sm:gap-3">
             <div className="min-w-0 flex-1">
               <p className="text-xs sm:text-sm">
-                <span className="font-semibold uppercase text-purple">
+                <span
+                  className={`font-semibold uppercase ${
+                    comment.is_admin ? "text-white" : "text-purple"
+                  }`}
+                  title={comment.is_admin ? "This user is an admin" : undefined}
+                >
                   {comment.username}
+
+                  {comment.is_admin && (
+                    <span className="ml-1 text-[10px] tracking-wider text-white sm:text-xs">
+                      @ADMIN
+                    </span>
+                  )}
                 </span>
 
                 <span className="ml-2 text-[10px] text-text sm:text-xs">
@@ -320,8 +332,17 @@ function CommentRow({
 
             {/* Comment preview */}
             <div className="mt-4 rounded-sm border border-purple/20 bg-background px-3 py-3 sm:mt-5 sm:px-4">
-              <p className="text-xs font-semibold uppercase text-purple">
+              <p
+                className={`text-xs font-semibold uppercase ${
+                  comment.is_admin ? "text-white" : "text-purple"
+                }`}
+              >
                 {comment.username}
+                {comment.is_admin && (
+                  <span className="ml-1 text-[10px] tracking-wider text-white">
+                    @ADMIN
+                  </span>
+                )}
               </p>
 
               <p className="mt-1 wrap-break-word text-sm text-white">
