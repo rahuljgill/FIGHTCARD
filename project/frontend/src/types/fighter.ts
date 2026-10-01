@@ -17,7 +17,7 @@ export interface Fighter {
   stance: string;
   hometown: string;
   record: FighterRecord;
-  last_5: ("W" | "L")[];
+  last_5: ("W" | "L" | "NC")[];
 }
 
 export function formatRecord(record: FighterRecord): string {

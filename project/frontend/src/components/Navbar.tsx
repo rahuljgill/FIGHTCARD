@@ -92,7 +92,7 @@ function Navbar() {
                     <span
                       aria-hidden
                       className={`text-md leading-none text-purple transition-transform duration-200 ${
-                        dropdownOpen ? "rotate-[-90deg]" : "rotate-90"
+                        dropdownOpen ? "-rotate-90" : "rotate-90"
                       }`}
                     >
                       ›
@@ -166,7 +166,7 @@ function Navbar() {
                     <span
                       aria-hidden
                       className={`text-md leading-none text-purple transition-transform duration-200 ${
-                        mobileMenuOpen ? "rotate-[-90deg]" : "rotate-90"
+                        mobileMenuOpen ? "-rotate-90" : "rotate-90"
                       }`}
                     >
                       ›

@@ -1,24 +1,46 @@
 import type { Fight } from "../types/fight";
+
 import type { Fighter } from "../types/fighter";
+
 import { formatRecord } from "../types/fighter";
+
 import { getFighterById } from "../data/fighters";
+
 import { getFlagUrl } from "../utils/flags";
+
 import { formatDateParts } from "../utils/date";
+
 import leftSide from "../assets/genericSprites/leftHalf.png";
+
 import rightSide from "../assets/genericSprites/rightHalf.png";
+
 import { getFighterSprite } from "../utils/sprites";
+
 import tickIcon from "../assets/tick.svg";
+
 import crossIcon from "../assets/cross.svg";
+
+import noContestIcon from "../assets/noContest.svg";
+
 import Tooltip from "./Tooltip";
 
-function ResultBox({ result }: { result: "W" | "L" }) {
-  const isWin = result === "W";
+function ResultBox({
+  result,
+  size = "desktop",
+}: {
+  result: "W" | "L" | "NC";
+  size?: "desktop" | "mobile";
+}) {
+  const icon =
+    result === "W" ? tickIcon : result === "L" ? crossIcon : noContestIcon;
+
+  const alt = result === "W" ? "Win" : result === "L" ? "Loss" : "No Contest";
 
   return (
     <img
-      src={isWin ? tickIcon : crossIcon}
-      alt={isWin ? "Win" : "Loss"}
-      className="h-6 w-6"
+      src={icon}
+      alt={alt}
+      className={size === "mobile" ? "h-5 w-5" : "h-6 w-6"}
     />
   );
 }
@@ -123,12 +145,7 @@ function MobileFighterBlock({
 
       <div className="mt-1 flex gap-1">
         {fighter.last_5.map((r, i) => (
-          <img
-            key={i}
-            src={r === "W" ? tickIcon : crossIcon}
-            alt={r === "W" ? "Win" : "Loss"}
-            className="h-5 w-5"
-          />
+          <ResultBox key={i} result={r} size="mobile" />
         ))}
       </div>
     </div>

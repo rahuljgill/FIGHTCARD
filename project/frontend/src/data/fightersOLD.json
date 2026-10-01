@@ -1,0 +1,1757 @@
+{
+  "fighters": [
+    {
+      "id": "oleksandr-usyk",
+      "first_name": "Oleksandr",
+      "last_name": "Usyk",
+      "nickname": "The Cat",
+      "date_of_birth": "1987-01-17",
+      "country": "UKR",
+      "height": "6'3\" / 191 CM",
+      "reach": "78\" / 198 CM",
+      "weight": "200 LBS / 90.7 KG",
+      "stance": "Orthodox",
+      "hometown": "Simferopol, Ukraine",
+      "record": {
+        "wins": 24,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": [
+        "W",
+        "W",
+        "W",
+        "W",
+        "W"
+      ]
+    },
+    {
+      "id": "tyson-fury",
+      "first_name": "Tyson",
+      "last_name": "Fury",
+      "nickname": "The Gypsy King",
+      "date_of_birth": "1988-08-12",
+      "country": "GBR",
+      "height": "6'9\" / 206 CM",
+      "reach": "85\" / 216 CM",
+      "weight": "264 LBS / 120 KG",
+      "stance": "Orthodox",
+      "hometown": "Manchester, England",
+      "record": {
+        "wins": 34,
+        "losses": 1,
+        "draws": 1
+      },
+      "last_5": [
+        "W",
+        "W",
+        "W",
+        "L",
+        "W"
+      ]
+    },
+    {
+      "id": "devin-haney",
+      "first_name": "Devin",
+      "last_name": "Haney",
+      "nickname": "The Dream",
+      "date_of_birth": "1998-11-17",
+      "country": "USA",
+      "height": "5'8\" / 173 CM",
+      "reach": "71\" / 180 CM",
+      "weight": "140 LBS / 63.5 KG",
+      "stance": "Orthodox",
+      "hometown": "San Francisco, California, USA",
+      "record": {
+        "wins": 33,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": [
+        "W",
+        "W",
+        "W",
+        "W",
+        "W"
+      ]
+    },
+    {
+      "id": "example-fighter",
+      "first_name": "Example",
+      "last_name": "Fighter",
+      "nickname": "The Example",
+      "date_of_birth": "1995-05-12",
+      "country": "AUS",
+      "height": "5'10\" / 178 CM",
+      "reach": "72\" / 183 CM",
+      "weight": "140 LBS / 63.5 KG",
+      "stance": "Orthodox",
+      "hometown": "Mackay, Australia",
+      "record": {
+        "wins": 20,
+        "losses": 2,
+        "draws": 0
+      },
+      "last_5": [
+        "W",
+        "W",
+        "L",
+        "W",
+        "W"
+      ]
+    },
+    {
+      "id": "isaac-cruz",
+      "first_name": "Isaac",
+      "last_name": "Cruz",
+      "nickname": "Pitbull",
+      "date_of_birth": "1997-05-02",
+      "country": "MEX",
+      "height": "5'4\" / 163 CM",
+      "reach": "62\" / 157 CM",
+      "weight": null,
+      "stance": "Orthodox",
+      "hometown": "Mexico City, Mexico",
+      "record": {
+        "wins": 28,
+        "losses": 3,
+        "draws": 2
+      },
+      "last_5": []
+    },
+    {
+      "id": "nestor-bravo",
+      "first_name": "Nestor",
+      "last_name": "Bravo",
+      "nickname": null,
+      "date_of_birth": "1993-10-06",
+      "country": "PRI",
+      "height": null,
+      "reach": "70\" / 178 CM",
+      "weight": null,
+      "stance": "Orthodox",
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "jesus-alejandro-ramos-jr",
+      "first_name": "Jesus Alejandro",
+      "last_name": "Ramos Jr",
+      "nickname": "El Mono",
+      "date_of_birth": "2001-03-07",
+      "country": "USA",
+      "height": "5'10\" / 178 CM",
+      "reach": "72\" / 183 CM",
+      "weight": null,
+      "stance": "Southpaw",
+      "hometown": "Casa Grande, Arizona, USA",
+      "record": {
+        "wins": 24,
+        "losses": 1,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "meiirim-nursultanov",
+      "first_name": "Meiirim",
+      "last_name": "Nursultanov",
+      "nickname": null,
+      "date_of_birth": "1993-07-29",
+      "country": "KAZ",
+      "height": "6'0\" / 183 CM",
+      "reach": null,
+      "weight": null,
+      "stance": "Orthodox",
+      "hometown": "Newbury Park, California, USA",
+      "record": {
+        "wins": 20,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "cody-kelly",
+      "first_name": "Cody",
+      "last_name": "Kelly",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "CAN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "helmand-meran-alekozai",
+      "first_name": "Helmand",
+      "last_name": "Meran Alekozai",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "AFG",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "sukhdeep-singh-bhatti",
+      "first_name": "Sukhdeep",
+      "last_name": "Singh Bhatti",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "CAN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "melinda-watpool",
+      "first_name": "Melinda",
+      "last_name": "Watpool",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "CAN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "maria-dolores-hernandez-garcia",
+      "first_name": "Maria",
+      "last_name": "Dolores Hernandez Garcia",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "MEX",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "deaquan-rumbolt",
+      "first_name": "Deaquan",
+      "last_name": "Rumbolt",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "CAN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "javier-ponce",
+      "first_name": "Javier",
+      "last_name": "Ponce",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "MEX",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "doni-foreman",
+      "first_name": "Doni",
+      "last_name": "Foreman",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "ryan-wagner",
+      "first_name": "Ryan",
+      "last_name": "Wagner",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "gregory-miller",
+      "first_name": "Gregory",
+      "last_name": "Miller",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "thanongsak-simsri",
+      "first_name": "Thanongsak",
+      "last_name": "Simsri",
+      "nickname": null,
+      "date_of_birth": "2000-11-01",
+      "country": "THA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": "Southpaw",
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "mark-vicelles",
+      "first_name": "Mark",
+      "last_name": "Vicelles",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "PHL",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "shunpei-ohata",
+      "first_name": "Shunpei",
+      "last_name": "Ohata",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "JPN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "pete-apolinar",
+      "first_name": "Pete",
+      "last_name": "Apolinar",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "ryosuke-nishida",
+      "first_name": "Ryosuke",
+      "last_name": "Nishida",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "JPN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "sam-goodman",
+      "first_name": "Sam",
+      "last_name": "Goodman",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "AUS",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "takuma-inoue",
+      "first_name": "Takuma",
+      "last_name": "Inoue",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "JPN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "tenshin-nasukawa",
+      "first_name": "Tenshin",
+      "last_name": "Nasukawa",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "JPN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "tomoya-tsuboi",
+      "first_name": "Tomoya",
+      "last_name": "Tsuboi",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "JPN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "ricardo-malajika",
+      "first_name": "Ricardo",
+      "last_name": "Malajika",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "ZAF",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "hayato-aiko",
+      "first_name": "Hayato",
+      "last_name": "Aiko",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "JPN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "natsuki-kuramochi",
+      "first_name": "Natsuki",
+      "last_name": "Kuramochi",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "JPN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "ben-whittaker",
+      "first_name": "Ben",
+      "last_name": "Whittaker",
+      "nickname": "The Surgeon",
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "conor-wallace",
+      "first_name": "Conor",
+      "last_name": "Wallace",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "AUS",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "bilal-fawaz",
+      "first_name": "Bilal",
+      "last_name": "Fawaz",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "eithan-james",
+      "first_name": "Eithan",
+      "last_name": "James",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "sean-bruce",
+      "first_name": "Sean",
+      "last_name": "Bruce",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "hamza-uddin",
+      "first_name": "Hamza",
+      "last_name": "Uddin",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "ibraheem-sulaimaan",
+      "first_name": "Ibraheem",
+      "last_name": "Sulaimaan",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "sonny-hardy",
+      "first_name": "Sonny",
+      "last_name": "Hardy",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "klinton-baptiste",
+      "first_name": "Klinton",
+      "last_name": "Baptiste",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "aaron-bowen",
+      "first_name": "Aaron",
+      "last_name": "Bowen",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "adam-maca",
+      "first_name": "Adam",
+      "last_name": "Maca",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "odel-kamara",
+      "first_name": "Odel",
+      "last_name": "Kamara",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "mea-motu",
+      "first_name": "Mea",
+      "last_name": "Motu",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "NZL",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "mariah-turner",
+      "first_name": "Mariah",
+      "last_name": "Turner",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "john-ume",
+      "first_name": "John",
+      "last_name": "Ume",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "NZL",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "riley-allen",
+      "first_name": "Riley",
+      "last_name": "Allen",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "NZL",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "floyd-schofield",
+      "first_name": "Floyd",
+      "last_name": "Schofield",
+      "nickname": "Kid Austin",
+      "date_of_birth": null,
+      "country": "USA",
+      "height": "5'7\" / 170 CM",
+      "reach": null,
+      "weight": null,
+      "stance": "Orthodox",
+      "hometown": "Austin, Texas, USA",
+      "record": {
+        "wins": 19,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "lucas-bahdi",
+      "first_name": "Lucas",
+      "last_name": "Bahdi",
+      "nickname": "Prince",
+      "date_of_birth": null,
+      "country": "CAN",
+      "height": "5'9\" / 175 CM",
+      "reach": null,
+      "weight": null,
+      "stance": "Orthodox",
+      "hometown": "Niagara Falls, Ontario, Canada",
+      "record": {
+        "wins": 20,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "oscar-collazo",
+      "first_name": "Oscar",
+      "last_name": "Collazo",
+      "nickname": "El Pupilo",
+      "date_of_birth": null,
+      "country": "PRI",
+      "height": "5'2\" / 157 CM",
+      "reach": null,
+      "weight": null,
+      "stance": "Southpaw",
+      "hometown": "Villalba, Puerto Rico",
+      "record": {
+        "wins": 15,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "ricardo-sandoval",
+      "first_name": "Ricardo",
+      "last_name": "Sandoval",
+      "nickname": "El Niño",
+      "date_of_birth": null,
+      "country": "USA",
+      "height": "5'6\" / 168 CM",
+      "reach": null,
+      "weight": null,
+      "stance": "Orthodox",
+      "hometown": "Rialto, California, USA",
+      "record": {
+        "wins": 27,
+        "losses": 2,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "daniel-dubois",
+      "first_name": "Daniel",
+      "last_name": "Dubois",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "fabio-wardley",
+      "first_name": "Fabio",
+      "last_name": "Wardley",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "sebastian-fundora",
+      "first_name": "Sebastian",
+      "last_name": "Fundora",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "ermal-hadribeaj",
+      "first_name": "Ermal",
+      "last_name": "Hadribeaj",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "ALB",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "brandon-figueroa",
+      "first_name": "Brandon",
+      "last_name": "Figueroa",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "tomoki-kameda",
+      "first_name": "Tomoki",
+      "last_name": "Kameda",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "JPN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "jermall-charlo",
+      "first_name": "Jermall",
+      "last_name": "Charlo",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "koen-mazoudier",
+      "first_name": "Koen",
+      "last_name": "Mazoudier",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "AUS",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "mazlum-akdeniz",
+      "first_name": "Mazlum",
+      "last_name": "Akdeniz",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "CAN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "marie-pier-houle",
+      "first_name": "Marie",
+      "last_name": "Pier Houle",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "CAN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "kirill-bazhenov",
+      "first_name": "Kirill",
+      "last_name": "Bazhenov",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "RUS",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "cedrick-belony-duliepre",
+      "first_name": "Cedrick",
+      "last_name": "Belony Duliepre",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "CAN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "alessia-mansueto",
+      "first_name": "Alessia",
+      "last_name": "Mansueto",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "CAN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "dalton-smith",
+      "first_name": "Dalton",
+      "last_name": "Smith",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "alberto-puello",
+      "first_name": "Alberto",
+      "last_name": "Puello",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "DOM",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "giorgio-visioli",
+      "first_name": "Giorgio",
+      "last_name": "Visioli",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "maxi-hughes",
+      "first_name": "Maxi",
+      "last_name": "Hughes",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "shannon-ryan",
+      "first_name": "Shannon",
+      "last_name": "Ryan",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "emma-dolan",
+      "first_name": "Emma",
+      "last_name": "Dolan",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "edward-hardy",
+      "first_name": "Edward",
+      "last_name": "Hardy",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "ibrahim-nadim",
+      "first_name": "Ibrahim",
+      "last_name": "Nadim",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "aqib-fiaz",
+      "first_name": "Aqib",
+      "last_name": "Fiaz",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "jordan-flynn",
+      "first_name": "Jordan",
+      "last_name": "Flynn",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "joe-hayden",
+      "first_name": "Joe",
+      "last_name": "Hayden",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "will-harrison",
+      "first_name": "Will",
+      "last_name": "Harrison",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "leo-atang",
+      "first_name": "Leo",
+      "last_name": "Atang",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "chris-mulunda",
+      "first_name": "Chris",
+      "last_name": "Mulunda",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "ZMB",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "emanuel-navarrete",
+      "first_name": "Emanuel",
+      "last_name": "Navarrete",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "MEX",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": 40,
+        "losses": 2,
+        "draws": 1
+      },
+      "last_5": []
+    },
+    {
+      "id": "oshaquie-foster",
+      "first_name": "O'Shaquie",
+      "last_name": "Foster",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": 25,
+        "losses": 3,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "albert-gonzalez",
+      "first_name": "Albert",
+      "last_name": "Gonzalez",
+      "nickname": "Chop Chop",
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": 18,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "edward-vazquez",
+      "first_name": "Edward",
+      "last_name": "Vazquez",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": 20,
+        "losses": 3,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "canelo-alvarez",
+      "first_name": "Canelo",
+      "last_name": "Alvarez",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "MEX",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "christian-mbilli",
+      "first_name": "Christian",
+      "last_name": "Mbilli",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "CMR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "alycia-baumgardner",
+      "first_name": "Alycia",
+      "last_name": "Baumgardner",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "elif-nur-turhan",
+      "first_name": "Elif",
+      "last_name": "Nur Turhan",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "TUR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "tiara-brown",
+      "first_name": "Tiara",
+      "last_name": "Brown",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": 21,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "ellie-scotney",
+      "first_name": "Ellie",
+      "last_name": "Scotney",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": 12,
+        "losses": 0,
+        "draws": 0
+      },
+      "last_5": []
+    },
+    {
+      "id": "skye-nicolson",
+      "first_name": "Skye",
+      "last_name": "Nicolson",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "AUS",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "miyo-yoshida",
+      "first_name": "Miyo",
+      "last_name": "Yoshida",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "JPN",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "ramla-ali",
+      "first_name": "Ramla",
+      "last_name": "Ali",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "GBR",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    },
+    {
+      "id": "mikiah-kreps",
+      "first_name": "Mikiah",
+      "last_name": "Kreps",
+      "nickname": null,
+      "date_of_birth": null,
+      "country": "USA",
+      "height": null,
+      "reach": null,
+      "weight": null,
+      "stance": null,
+      "hometown": null,
+      "record": {
+        "wins": null,
+        "losses": null,
+        "draws": null
+      },
+      "last_5": []
+    }
+  ]
+}

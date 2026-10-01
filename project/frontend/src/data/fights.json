@@ -1,482 +1,6 @@
 {
   "fights": [
     {
-      "id": "usyk-vs-fury-3",
-      "status": "closed",
-      "date": "2026-09-18",
-      "time": "20:00",
-      "timezone": "ET",
-      "venue": {
-        "name": "Madison Square Garden",
-        "city": "New York",
-        "country": "USA"
-      },
-      "main_event": {
-        "fighter_1": "oleksandr-usyk",
-        "fighter_2": "tyson-fury",
-        "scheduled_rounds": 12,
-        "title": "WBC World Title",
-        "result": {
-          "winner": "oleksandr-usyk",
-          "loser": "tyson-fury",
-          "method": "12-round unanimous decision"
-        }
-      },
-      "undercard": [
-        {
-          "order": 1,
-          "fighter_1": "devin-haney",
-          "fighter_2": "example-fighter",
-          "scheduled_rounds": 10,
-          "title": null,
-          "result": {
-            "winner": "example-fighter",
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 2,
-          "fighter_1": "oleksandr-usyk",
-          "fighter_2": "devin-haney",
-          "scheduled_rounds": 8,
-          "title": null,
-          "result": {
-            "winner": "oleksandr-usyk",
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 3,
-          "fighter_1": "tyson-fury",
-          "fighter_2": "example-fighter",
-          "scheduled_rounds": 6,
-          "title": "WBC International Title",
-          "result": {
-            "winner": "example-fighter",
-            "loser": null,
-            "method": null
-          }
-        }
-      ]
-    },
-    {
-      "id": "haney-vs-example",
-      "status": "open",
-      "date": "2026-09-15",
-      "time": "21:00",
-      "timezone": "ET",
-      "venue": {
-        "name": "T-Mobile Arena",
-        "city": "Las Vegas",
-        "country": "USA"
-      },
-      "main_event": {
-        "fighter_1": "devin-haney",
-        "fighter_2": "example-fighter",
-        "scheduled_rounds": 12,
-        "title": "WBA World Title",
-        "result": {
-          "winner": null,
-          "loser": null,
-          "method": null
-        }
-      },
-      "undercard": [
-        {
-          "order": 1,
-          "fighter_1": "oleksandr-usyk",
-          "fighter_2": "tyson-fury",
-          "scheduled_rounds": 10,
-          "title": "Heavyweight bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 2,
-          "fighter_1": "devin-haney",
-          "fighter_2": "tyson-fury",
-          "scheduled_rounds": 8,
-          "title": null,
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 3,
-          "fighter_1": "example-fighter",
-          "fighter_2": "oleksandr-usyk",
-          "scheduled_rounds": 6,
-          "title": null,
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        }
-      ]
-    },
-    {
-      "id": "isaac-cruz-vs-nestor-bravo",
-      "status": "open",
-      "date": "2026-09-19",
-      "time": null,
-      "timezone": null,
-      "venue": {
-        "name": null,
-        "city": "San Diego",
-        "country": "USA"
-      },
-      "main_event": {
-        "fighter_1": "isaac-cruz",
-        "fighter_2": "nestor-bravo",
-        "scheduled_rounds": 12,
-        "title": "Interim WBC Junior Welterweight Title",
-        "result": {
-          "winner": null,
-          "loser": null,
-          "method": null
-        }
-      },
-      "undercard": [
-        {
-          "order": 1,
-          "fighter_1": "jesus-alejandro-ramos-jr",
-          "fighter_2": "meiirim-nursultanov",
-          "scheduled_rounds": 12,
-          "title": "Interim WBC Middleweight Title",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        }
-      ]
-    },
-    {
-      "id": "cody-kelly-vs-helmand-meran-alekozai",
-      "status": "open",
-      "date": "2026-09-19",
-      "time": null,
-      "timezone": null,
-      "venue": {
-        "name": null,
-        "city": "Brampton",
-        "country": "CAN"
-      },
-      "main_event": {
-        "fighter_1": "cody-kelly",
-        "fighter_2": "helmand-meran-alekozai",
-        "scheduled_rounds": 10,
-        "title": "Welterweights Bout",
-        "result": {
-          "winner": null,
-          "loser": null,
-          "method": null
-        }
-      },
-      "undercard": [
-        {
-          "order": 1,
-          "fighter_1": "sukhdeep-singh-bhatti",
-          "fighter_2": "tba",
-          "scheduled_rounds": 10,
-          "title": "Junior Middleweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 2,
-          "fighter_1": "melinda-watpool",
-          "fighter_2": "maria-dolores-hernandez-garcia",
-          "scheduled_rounds": 8,
-          "title": "Women's Middleweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 3,
-          "fighter_1": "deaquan-rumbolt",
-          "fighter_2": "javier-ponce",
-          "scheduled_rounds": 6,
-          "title": "Junior Bantamweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 4,
-          "fighter_1": "doni-foreman",
-          "fighter_2": "tba",
-          "scheduled_rounds": 6,
-          "title": "Heavyweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 5,
-          "fighter_1": "ryan-wagner",
-          "fighter_2": "gregory-miller",
-          "scheduled_rounds": 6,
-          "title": "Super Middleweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        }
-      ]
-    },
-    {
-      "id": "thanongsak-simsri-vs-mark-vicelles",
-      "status": "open",
-      "date": "2026-09-26",
-      "time": null,
-      "timezone": null,
-      "venue": {
-        "name": null,
-        "city": "Fuji",
-        "country": "JPN"
-      },
-      "main_event": {
-        "fighter_1": "thanongsak-simsri",
-        "fighter_2": "mark-vicelles",
-        "scheduled_rounds": 12,
-        "title": "IBF Junior Flyweight Title",
-        "result": {
-          "winner": null,
-          "loser": null,
-          "method": null
-        }
-      },
-      "undercard": [
-        {
-          "order": 1,
-          "fighter_1": "shunpei-ohata",
-          "fighter_2": "pete-apolinar",
-          "scheduled_rounds": 10,
-          "title": "Junior Lightweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        }
-      ]
-    },
-    {
-      "id": "ryosuke-nishida-vs-sam-goodman",
-      "status": "open",
-      "date": "2026-09-27",
-      "time": null,
-      "timezone": null,
-      "venue": {
-        "name": null,
-        "city": "Tokyo",
-        "country": "JPN"
-      },
-      "main_event": {
-        "fighter_1": "ryosuke-nishida",
-        "fighter_2": "sam-goodman",
-        "scheduled_rounds": 12,
-        "title": "Vacant Interim IBF Junior Featherweight Title",
-        "result": {
-          "winner": null,
-          "loser": null,
-          "method": null
-        }
-      },
-      "undercard": [
-        {
-          "order": 1,
-          "fighter_1": "takuma-inoue",
-          "fighter_2": "tenshin-nasukawa",
-          "scheduled_rounds": 12,
-          "title": "WBC Bantamweight Title",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 2,
-          "fighter_1": "tomoya-tsuboi",
-          "fighter_2": "ricardo-malajika",
-          "scheduled_rounds": 12,
-          "title": "Vacant WBC Junior Bantamweight Title",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 3,
-          "fighter_1": "hayato-aiko",
-          "fighter_2": "natsuki-kuramochi",
-          "scheduled_rounds": 4,
-          "title": "Featherweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        }
-      ]
-    },
-    {
-      "id": "ben-whittaker-vs-conor-wallace",
-      "status": "open",
-      "date": "2026-10-03",
-      "time": null,
-      "timezone": null,
-      "venue": {
-        "name": null,
-        "city": "Birmingham",
-        "country": "GBR"
-      },
-      "main_event": {
-        "fighter_1": "ben-whittaker",
-        "fighter_2": "conor-wallace",
-        "scheduled_rounds": 12,
-        "title": "Light Heavyweights Bout",
-        "result": {
-          "winner": null,
-          "loser": null,
-          "method": null
-        }
-      },
-      "undercard": [
-        {
-          "order": 1,
-          "fighter_1": "bilal-fawaz",
-          "fighter_2": "eithan-james",
-          "scheduled_rounds": 12,
-          "title": "Junior Middleweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 2,
-          "fighter_1": "sean-bruce",
-          "fighter_2": "hamza-uddin",
-          "scheduled_rounds": 12,
-          "title": "Flyweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 3,
-          "fighter_1": "ibraheem-sulaimaan",
-          "fighter_2": "sonny-hardy",
-          "scheduled_rounds": 10,
-          "title": "Junior Lightweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 4,
-          "fighter_1": "klinton-baptiste",
-          "fighter_2": "aaron-bowen",
-          "scheduled_rounds": 10,
-          "title": "Super Middleweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 5,
-          "fighter_1": "adam-maca",
-          "fighter_2": "tba",
-          "scheduled_rounds": 4,
-          "title": "Junior Lightweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        },
-        {
-          "order": 6,
-          "fighter_1": "odel-kamara",
-          "fighter_2": "tba",
-          "scheduled_rounds": 4,
-          "title": "Junior Middleweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        }
-      ]
-    },
-    {
-      "id": "mea-motu-vs-mariah-turner",
-      "status": "open",
-      "date": "2026-10-03",
-      "time": null,
-      "timezone": null,
-      "venue": {
-        "name": null,
-        "city": "Auckland",
-        "country": "NZL"
-      },
-      "main_event": {
-        "fighter_1": "mea-motu",
-        "fighter_2": "mariah-turner",
-        "scheduled_rounds": 10,
-        "title": "Women's Featherweights Bout",
-        "result": {
-          "winner": null,
-          "loser": null,
-          "method": null
-        }
-      },
-      "undercard": [
-        {
-          "order": 1,
-          "fighter_1": "john-ume",
-          "fighter_2": "riley-allen",
-          "scheduled_rounds": 10,
-          "title": "Welterweights Bout",
-          "result": {
-            "winner": null,
-            "loser": null,
-            "method": null
-          }
-        }
-      ]
-    },
-    {
       "id": "floyd-schofield-vs-lucas-bahdi",
       "status": "open",
       "date": "2026-10-10",
@@ -501,10 +25,82 @@
       "undercard": [
         {
           "order": 1,
-          "fighter_1": "oscar-collazo",
-          "fighter_2": "ricardo-sandoval",
+          "fighter_1": "ricardo-sandoval",
+          "fighter_2": "sergio-mendoza",
           "scheduled_rounds": 12,
           "title": "Sandoval's WBA and WBC Flyweight Titles",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 2,
+          "fighter_1": "jahmal-harvey",
+          "fighter_2": "pedro-castaneda",
+          "scheduled_rounds": 8,
+          "title": "Lightweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 3,
+          "fighter_1": "jan-paul-rivera",
+          "fighter_2": "abraham-perfecto",
+          "scheduled_rounds": 10,
+          "title": "Junior Lightweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 4,
+          "fighter_1": "joshua-edwards",
+          "fighter_2": "craig-lewis",
+          "scheduled_rounds": 8,
+          "title": "Heavyweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 5,
+          "fighter_1": "tristan-kalkreuth",
+          "fighter_2": "ivan-rosado",
+          "scheduled_rounds": 10,
+          "title": "Cruiserweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 6,
+          "fighter_1": "grant-flores",
+          "fighter_2": "mikey-dahlman",
+          "scheduled_rounds": 10,
+          "title": "Middleweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 7,
+          "fighter_1": "naomy-valle",
+          "fighter_2": "sheyla-moreno",
+          "scheduled_rounds": 8,
+          "title": "Women's Flyweights Bout",
           "result": {
             "winner": null,
             "loser": null,
@@ -535,7 +131,56 @@
           "method": null
         }
       },
-      "undercard": []
+      "undercard": [
+        {
+          "order": 1,
+          "fighter_1": "louie-odoherty",
+          "fighter_2": "michael-gomez-jr",
+          "scheduled_rounds": 12,
+          "title": "Lightweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 2,
+          "fighter_1": "bakhodir-jalolov",
+          "fighter_2": "solomon-dacres",
+          "scheduled_rounds": 10,
+          "title": "Heavyweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 3,
+          "fighter_1": "tony-curtis",
+          "fighter_2": "kerim-agius",
+          "scheduled_rounds": 8,
+          "title": "Junior Bantamweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 4,
+          "fighter_1": "manny-safari",
+          "fighter_2": "tba",
+          "scheduled_rounds": 4,
+          "title": "Bantamweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        }
+      ]
     },
     {
       "id": "sebastian-fundora-vs-ermal-hadribeaj",
@@ -793,6 +438,18 @@
       "undercard": [
         {
           "order": 1,
+          "fighter_1": "frank-martin",
+          "fighter_2": "tarik-zaina",
+          "scheduled_rounds": 10,
+          "title": "Junior Welterweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 2,
           "fighter_1": "albert-gonzalez",
           "fighter_2": "edward-vazquez",
           "scheduled_rounds": 10,
@@ -887,8 +544,444 @@
             "loser": null,
             "method": null
           }
+        },
+        {
+          "order": 4,
+          "fighter_1": "javier-guerrero-cruz",
+          "fighter_2": "tba",
+          "scheduled_rounds": 6,
+          "title": "Welterweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
         }
       ]
+    },
+    {
+      "id": "osleys-iglesias-vs-oliver-zaren",
+      "status": "open",
+      "date": "2026-10-08",
+      "time": null,
+      "timezone": null,
+      "venue": {
+        "name": null,
+        "city": "Quebec City",
+        "country": "CAN"
+      },
+      "main_event": {
+        "fighter_1": "osleys-iglesias",
+        "fighter_2": "oliver-zaren",
+        "scheduled_rounds": 12,
+        "title": "Iglesias' IBF Super Middleweight Title",
+        "result": {
+          "winner": null,
+          "loser": null,
+          "method": null
+        }
+      },
+      "undercard": [
+        {
+          "order": 1,
+          "fighter_1": "wilkens-mathieu",
+          "fighter_2": "vladimir-shishkin",
+          "scheduled_rounds": 10,
+          "title": "Super Middleweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 2,
+          "fighter_1": "luis-santana",
+          "fighter_2": "dzmitry-asanau",
+          "scheduled_rounds": 10,
+          "title": "Lightweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 3,
+          "fighter_1": "imam-khataev",
+          "fighter_2": "padraig-mccrory",
+          "scheduled_rounds": 10,
+          "title": "Light Heavyweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 4,
+          "fighter_1": "leila-beaudoin",
+          "fighter_2": "brisa-abigail-rosario-alfonzo",
+          "scheduled_rounds": 10,
+          "title": "Beaudoin's WBA Women's Interim Junior Lightweight Title",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 5,
+          "fighter_1": "thomas-chabot",
+          "fighter_2": "jose-antonio-sanchez-romero",
+          "scheduled_rounds": 10,
+          "title": "Featherweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 6,
+          "fighter_1": "erik-israyelyan",
+          "fighter_2": "jesse-frank-sallows",
+          "scheduled_rounds": 6,
+          "title": "Junior Lightweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 7,
+          "fighter_1": "daylen-pepin",
+          "fighter_2": "matias-pinilla",
+          "scheduled_rounds": 4,
+          "title": "Lightweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 8,
+          "fighter_1": "jacob-blais",
+          "fighter_2": "yoan-trottier",
+          "scheduled_rounds": 4,
+          "title": "Welterweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "joshua-buatsi-vs-willy-hutchinson",
+      "status": "open",
+      "date": "2026-11-07",
+      "time": null,
+      "timezone": null,
+      "venue": {
+        "name": null,
+        "city": "Manchester",
+        "country": "GBR"
+      },
+      "main_event": {
+        "fighter_1": "joshua-buatsi",
+        "fighter_2": "willy-hutchinson",
+        "scheduled_rounds": 12,
+        "title": "Vacant WBC Interim Light Heavyweight Title",
+        "result": {
+          "winner": null,
+          "loser": null,
+          "method": null
+        }
+      },
+      "undercard": [
+        {
+          "order": 1,
+          "fighter_1": "jack-rafferty",
+          "fighter_2": "hovhannes-martirosyan",
+          "scheduled_rounds": 12,
+          "title": "Welterweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "chris-billam-smith-vs-cheavon-clarke",
+      "status": "open",
+      "date": "2026-11-07",
+      "time": null,
+      "timezone": null,
+      "venue": {
+        "name": null,
+        "city": "London",
+        "country": "GBR"
+      },
+      "main_event": {
+        "fighter_1": "chris-billam-smith",
+        "fighter_2": "cheavon-clarke",
+        "scheduled_rounds": 10,
+        "title": "Cruiserweights Bout",
+        "result": {
+          "winner": null,
+          "loser": null,
+          "method": null
+        }
+      },
+      "undercard": [
+        {
+          "order": 1,
+          "fighter_1": "zach-parker",
+          "fighter_2": "umar-dzambekov",
+          "scheduled_rounds": 10,
+          "title": "Light Heavyweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 2,
+          "fighter_1": "lucas-roehrig",
+          "fighter_2": "connal-mcdonald",
+          "scheduled_rounds": 8,
+          "title": "Cruiserweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 3,
+          "fighter_1": "damazion-vanhouter",
+          "fighter_2": "tba",
+          "scheduled_rounds": 8,
+          "title": "Heavyweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 4,
+          "fighter_1": "sam-hickey",
+          "fighter_2": "tba",
+          "scheduled_rounds": 8,
+          "title": "Middleweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "abraham-perez-vs-yankiel-rivera",
+      "status": "open",
+      "date": "2026-11-07",
+      "time": null,
+      "timezone": null,
+      "venue": {
+        "name": null,
+        "city": "Albuquerque",
+        "country": "USA"
+      },
+      "main_event": {
+        "fighter_1": "abraham-perez",
+        "fighter_2": "yankiel-rivera",
+        "scheduled_rounds": 12,
+        "title": "Perez's WBA Interim Flyweight Title",
+        "result": {
+          "winner": null,
+          "loser": null,
+          "method": null
+        }
+      },
+      "undercard": []
+    },
+    {
+      "id": "steven-butler-vs-erik-bazinyan",
+      "status": "open",
+      "date": "2026-11-12",
+      "time": null,
+      "timezone": null,
+      "venue": {
+        "name": null,
+        "city": "Montreal",
+        "country": "CAN"
+      },
+      "main_event": {
+        "fighter_1": "steven-butler",
+        "fighter_2": "erik-bazinyan",
+        "scheduled_rounds": 12,
+        "title": "Super Middleweights Bout",
+        "result": {
+          "winner": null,
+          "loser": null,
+          "method": null
+        }
+      },
+      "undercard": [
+        {
+          "order": 1,
+          "fighter_1": "jhon-orobio",
+          "fighter_2": "tba",
+          "scheduled_rounds": 10,
+          "title": "Junior Welterweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 2,
+          "fighter_1": "lenar-perez",
+          "fighter_2": "tba",
+          "scheduled_rounds": 10,
+          "title": "Cruiserweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 3,
+          "fighter_1": "avery-martin-duval",
+          "fighter_2": "tba",
+          "scheduled_rounds": 10,
+          "title": "Lightweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 4,
+          "fighter_1": "wyatt-sanford",
+          "fighter_2": "tba",
+          "scheduled_rounds": 8,
+          "title": "Lightweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 5,
+          "fighter_1": "keven-beausejour",
+          "fighter_2": "tba",
+          "scheduled_rounds": 4,
+          "title": "Super Middleweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        },
+        {
+          "order": 6,
+          "fighter_1": "nickenson-denis",
+          "fighter_2": "tba",
+          "scheduled_rounds": 4,
+          "title": "Super Middleweights Bout",
+          "result": {
+            "winner": null,
+            "loser": null,
+            "method": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "bakary-samake-vs-uisma-lima",
+      "status": "open",
+      "date": "2026-11-14",
+      "time": null,
+      "timezone": null,
+      "venue": {
+        "name": null,
+        "city": "Levallois-Perret",
+        "country": "FRA"
+      },
+      "main_event": {
+        "fighter_1": "bakary-samake",
+        "fighter_2": "uisma-lima",
+        "scheduled_rounds": 10,
+        "title": "Junior Middleweights Bout",
+        "result": {
+          "winner": null,
+          "loser": null,
+          "method": null
+        }
+      },
+      "undercard": []
+    },
+    {
+      "id": "tyson-fury-vs-anthony-joshua",
+      "status": "open",
+      "date": "2026-12-11",
+      "time": null,
+      "timezone": null,
+      "venue": {
+        "name": null,
+        "city": "Cardiff",
+        "country": "WAL"
+      },
+      "main_event": {
+        "fighter_1": "tyson-fury",
+        "fighter_2": "anthony-joshua",
+        "scheduled_rounds": 12,
+        "title": "Vacant WBA \"Super\" Heavyweight Title",
+        "result": {
+          "winner": null,
+          "loser": null,
+          "method": null
+        }
+      },
+      "undercard": []
+    },
+    {
+      "id": "anthony-cacace-vs-nick-ball",
+      "status": "open",
+      "date": "2026-12-19",
+      "time": null,
+      "timezone": null,
+      "venue": {
+        "name": null,
+        "city": "Belfast",
+        "country": "NIR"
+      },
+      "main_event": {
+        "fighter_1": "anthony-cacace",
+        "fighter_2": "nick-ball",
+        "scheduled_rounds": 12,
+        "title": "Cacace's WBA Junior Lightweight Title",
+        "result": {
+          "winner": null,
+          "loser": null,
+          "method": null
+        }
+      },
+      "undercard": []
     }
   ]
 }

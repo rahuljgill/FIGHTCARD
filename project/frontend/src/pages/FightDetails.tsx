@@ -1,18 +1,43 @@
 import { useParams, Link } from "react-router-dom";
+
 import { getFightById } from "../data/fights";
+
 import { getFighterById } from "../data/fighters";
+
 import { formatRecord, calculateAge } from "../types/fighter";
+
 import { getFlagUrl } from "../utils/flags";
+
 import { getFighterSprite } from "../utils/sprites";
+
 import ring from "../assets/ring.png";
+
 import standingLeft from "../assets/genericSprites/leftStanding.png";
+
 import standingRight from "../assets/genericSprites/rightStanding.png";
+
 import crown from "../assets/crown.svg";
+
 import tickIcon from "../assets/tick.svg";
+
 import crossIcon from "../assets/cross.svg";
+
+import noContestIcon from "../assets/noContest.svg";
+
 import UndercardSection from "../components/UndercardSection";
+
 import DiscussionSection from "../components/DiscussionSection";
+
 import PredictionSection from "../components/PredictionSection";
+
+function ResultBox({ result }: { result: "W" | "L" | "NC" }) {
+  const icon =
+    result === "W" ? tickIcon : result === "L" ? crossIcon : noContestIcon;
+
+  const alt = result === "W" ? "Win" : result === "L" ? "Loss" : "No Contest";
+
+  return <img src={icon} alt={alt} className="h-5 w-5 sm:h-6 sm:w-6" />;
+}
 
 function FightDetail() {
   const { id } = useParams();
@@ -59,9 +84,11 @@ function FightDetail() {
   );
 
   const flag1 = getFlagUrl(fighter1.country);
+
   const flag2 = getFlagUrl(fighter2.country);
 
   const sprite1 = getFighterSprite(fighter1.id) ?? standingLeft;
+
   const sprite2 = getFighterSprite(fighter2.id) ?? standingRight;
 
   return (
@@ -152,12 +179,7 @@ function FightDetail() {
 
                 <div className="flex justify-center gap-0.5 sm:gap-1">
                   {fighter1.last_5.map((r, i) => (
-                    <img
-                      key={i}
-                      src={r === "W" ? tickIcon : crossIcon}
-                      alt={r === "W" ? "Win" : "Loss"}
-                      className="h-5 w-5 sm:h-6 sm:w-6"
-                    />
+                    <ResultBox key={i} result={r} />
                   ))}
                 </div>
               </div>
@@ -217,12 +239,7 @@ function FightDetail() {
 
                 <div className="flex justify-center gap-0.5 sm:gap-1">
                   {fighter2.last_5.map((r, i) => (
-                    <img
-                      key={i}
-                      src={r === "W" ? tickIcon : crossIcon}
-                      alt={r === "W" ? "Win" : "Loss"}
-                      className="h-5 w-5 sm:h-6 sm:w-6"
-                    />
+                    <ResultBox key={i} result={r} />
                   ))}
                 </div>
               </div>
