@@ -14,7 +14,7 @@ export interface Bout {
 }
 
 export interface Venue {
-  name: string;
+  name: string | null;
   city: string;
   country: string;
 }
@@ -23,8 +23,8 @@ export interface Fight {
   id: string;
   status: "open" | "closed";
   date: string;
-  time: string;
-  timezone: string;
+  time: string | null;
+  timezone: string | null;
   venue: Venue;
   main_event: Bout;
   undercard: Bout[];
