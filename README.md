@@ -6,6 +6,8 @@ Users can register accounts, make predictions, and participate in discussions by
 
 The site combines boxing information with a retro, video-game-inspired aesthetic, using pixel-art fighter sprites and icons to give the feel of a classic fighting game.
 
+Note: FIGHTCARD is still in beta, and the collection of custom fighter sprites is extremely limited. As a result, vast majority of fighters use a default sprite, with new custom sprites being added periodically.
+
 ---
 
 ## 🌍 Live Deployment
