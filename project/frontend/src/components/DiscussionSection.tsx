@@ -142,13 +142,13 @@ function CommentRow({
                   }`}
                   title={comment.is_admin ? "This user is an admin" : undefined}
                 >
-                  {comment.username}
-
                   {comment.is_admin && (
-                    <span className="ml-1 text-[10px] tracking-wider text-white sm:text-xs">
+                    <span className="mr-1 text-[10px] tracking-wider text-red sm:text-xs">
                       @ADMIN
                     </span>
                   )}
+
+                  {comment.username}
                 </span>
 
                 <span className="ml-2 text-[10px] text-text sm:text-xs">

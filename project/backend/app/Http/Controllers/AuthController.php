@@ -11,36 +11,42 @@ use Illuminate\Validation\Rules\Password;
 class AuthController extends Controller
 {
     public function register(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', 'unique:users,email'],
-            'password' => [
-    'required',
-    'string',
-    'confirmed',
-    Password::min(8)
-        ->letters()
-        ->numbers()
-        ->symbols()
-        ->uncompromised(),
-],
-        ]);
+{
+    $validated = $request->validate([
+        'name' => [
+            'required',
+            'string',
+            'max:255',
+            'unique:users,name',
+            'not_regex:/\s/',
+        ],
+        'email' => ['required', 'email', 'max:255', 'unique:users,email'],
+        'password' => [
+            'required',
+            'string',
+            'confirmed',
+            Password::min(8)
+                ->letters()
+                ->numbers()
+                ->symbols()
+                ->uncompromised(),
+        ],
+    ]);
 
-       $user = User::create([
-    'name' => $validated['name'],
-    'email' => $validated['email'],
-    'password' => Hash::make($validated['password']),
-]);
+    $user = User::create([
+        'name' => $validated['name'],
+        'email' => $validated['email'],
+        'password' => Hash::make($validated['password']),
+    ]);
 
-Auth::login($user);
+    Auth::login($user);
 
-$user->sendEmailVerificationNotification();
+    $user->sendEmailVerificationNotification();
 
-return response()->json([
-    'user' => $user,
-], 201);
-    }
+    return response()->json([
+        'user' => $user,
+    ], 201);
+}
 
     public function login(Request $request)
 {
