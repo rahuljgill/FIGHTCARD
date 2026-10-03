@@ -1,25 +1,16 @@
 import type { Fight } from "../types/fight";
-
 import type { Fighter } from "../types/fighter";
-
 import { formatRecord } from "../types/fighter";
-
 import { getFighterById } from "../data/fighters";
-
 import { getFlagUrl } from "../utils/flags";
-
 import { formatDateParts } from "../utils/date";
 
 import leftSide from "../assets/genericSprites/leftHalf.png";
-
 import rightSide from "../assets/genericSprites/rightHalf.png";
-
 import { getFighterSprite } from "../utils/sprites";
 
 import tickIcon from "../assets/tick.svg";
-
 import crossIcon from "../assets/cross.svg";
-
 import noContestIcon from "../assets/noContest.svg";
 
 import Tooltip from "./Tooltip";
@@ -40,7 +31,7 @@ function ResultBox({
     <img
       src={icon}
       alt={alt}
-      className={size === "mobile" ? "h-5 w-5" : "h-6 w-6"}
+      className={size === "mobile" ? "h-3.5 w-3.5" : "h-6 w-6"}
     />
   );
 }
@@ -49,9 +40,11 @@ function truncateName(name: string, maxChars: number): string {
   return name.length > maxChars ? `${name.slice(0, maxChars)}-` : name;
 }
 
-// Rough char-count heuristic for the title, since it uses CSS truncate
-// (ellipsis) rather than manual slicing — the container is a fixed w-48,
-// so anything longer than this reliably wraps/clips in that space.
+/**
+ * Rough char-count heuristic for the title, since it uses CSS truncate
+ * (ellipsis) rather than manual slicing — the container is a fixed w-48,
+ * so anything longer than this reliably wraps/clips in that space.
+ */
 const TITLE_MAX_CHARS = 20;
 
 function FighterBlock({
@@ -63,6 +56,7 @@ function FighterBlock({
 }) {
   const genericImage = align === "left" ? leftSide : rightSide;
   const image = getFighterSprite(fighter.id) ?? genericImage;
+
   const displayLastName = truncateName(fighter.last_name, 11);
   const isTruncated = displayLastName !== fighter.last_name;
 
@@ -112,8 +106,6 @@ function MobileFighterBlock({
 }) {
   const genericImage = align === "left" ? leftSide : rightSide;
   const image = getFighterSprite(fighter.id) ?? genericImage;
-  const displayLastName = truncateName(fighter.last_name, 9);
-  const isTruncated = displayLastName !== fighter.last_name;
 
   return (
     <div className="flex min-w-0 flex-1 flex-col items-center text-center">
@@ -123,27 +115,25 @@ function MobileFighterBlock({
         className="h-20 w-20 shrink-0 object-contain"
       />
 
-      <p className="mt-0.5 max-w-full truncate font-body text-[10px] uppercase tracking-widest text-text">
-        {fighter.first_name}
-      </p>
+      <div className="flex h-7 w-full items-center justify-center">
+        <p className="max-w-[7ch] truncate font-body text-[10px] uppercase tracking-widest text-text">
+          {fighter.first_name}
+        </p>
+      </div>
 
-      {isTruncated ? (
+      <div className="flex h-7 w-full items-center justify-center">
         <Tooltip label={`${fighter.first_name} ${fighter.last_name}`}>
-          <h3 className="max-w-full whitespace-nowrap font-heading text-2xl uppercase tracking-wide text-white">
-            {displayLastName}
+          <h3 className="max-w-[7ch] truncate font-heading text-2xl uppercase leading-none tracking-wide text-white">
+            {fighter.last_name}
           </h3>
         </Tooltip>
-      ) : (
-        <h3 className="max-w-full whitespace-nowrap font-heading text-2xl uppercase tracking-wide text-white">
-          {displayLastName}
-        </h3>
-      )}
+      </div>
 
       <p className="font-body text-[10px] text-text">
         {formatRecord(fighter.record)}
       </p>
 
-      <div className="mt-1 flex gap-1">
+      <div className="mt-1 flex h-3.5 gap-0.5">
         {fighter.last_5.map((r, i) => (
           <ResultBox key={i} result={r} size="mobile" />
         ))}
@@ -260,7 +250,7 @@ function FightCard({ fight }: { fight: Fight }) {
         </div>
 
         {/* Main mobile content */}
-        <div className="min-w-0 flex-1 pb-2 ">
+        <div className="min-w-0 flex-1 pb-2">
           {/* Event information */}
           <div className="flex items-start justify-between gap-2 px-4 py-2.5">
             <div className="min-w-0 flex-1">
@@ -308,7 +298,7 @@ function FightCard({ fight }: { fight: Fight }) {
           <div className="flex items-center px-3 pt-2">
             <MobileFighterBlock fighter={fighter1} align="left" />
 
-            <div className="flex w-12 shrink-0 items-center justify-center">
+            <div className="flex w-10 shrink-0 items-center justify-center">
               <span className="text-2xl font-bold text-purple">VS</span>
             </div>
 

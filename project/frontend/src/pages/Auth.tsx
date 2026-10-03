@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
 
 import gloves from "../assets/gloves.svg";
@@ -20,21 +19,21 @@ function PasswordInput({
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="flex items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-4 py-3">
-      <Lock size={18} className="text-purple" />
+    <div className="flex min-w-0 items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-3 py-3 sm:px-4">
+      <Lock size={18} className="shrink-0 text-purple" />
 
       <input
         type={visible ? "text" : "password"}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
+        className="min-w-0 flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
       />
 
       <button
         type="button"
         onClick={() => setVisible((v) => !v)}
-        className="text-text hover:text-white"
+        className="shrink-0 text-text hover:text-white"
         aria-label={visible ? "Hide password" : "Show password"}
       >
         {visible ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -72,6 +71,7 @@ function LoginForm({ onSwitch }: { onSwitch: () => void }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     setError("");
 
     try {
@@ -122,15 +122,15 @@ function LoginForm({ onSwitch }: { onSwitch: () => void }) {
         <div>
           <label className="text-sm uppercase text-white">Email</label>
 
-          <div className="mt-2 flex items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-4 py-3">
-            <Mail size={18} className="text-purple" />
+          <div className="mt-2 flex min-w-0 items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-3 py-3 sm:px-4">
+            <Mail size={18} className="shrink-0 text-purple" />
 
             <input
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
+              className="min-w-0 flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
             />
           </div>
         </div>
@@ -310,15 +310,15 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
         <div>
           <label className="text-sm uppercase text-white">Username</label>
 
-          <div className="mt-2 flex items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-4 py-3">
-            <User size={18} className="text-purple" />
+          <div className="mt-2 flex min-w-0 items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-3 py-3 sm:px-4">
+            <User size={18} className="shrink-0 text-purple" />
 
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Choose a username"
-              className="flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
+              className="min-w-0 flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
             />
           </div>
         </div>
@@ -326,15 +326,15 @@ function RegisterForm({ onSwitch }: { onSwitch: () => void }) {
         <div>
           <label className="text-sm uppercase text-white">Email</label>
 
-          <div className="mt-2 flex items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-4 py-3">
-            <Mail size={18} className="text-purple" />
+          <div className="mt-2 flex min-w-0 items-center gap-3 rounded-sm border border-purple/40 bg-transparent px-3 py-3 sm:px-4">
+            <Mail size={18} className="shrink-0 text-purple" />
 
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
+              className="min-w-0 flex-1 bg-transparent text-sm text-white placeholder:text-text focus:outline-none"
             />
           </div>
         </div>

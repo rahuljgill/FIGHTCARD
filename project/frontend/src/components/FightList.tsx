@@ -12,7 +12,7 @@ function FightList() {
     .sort((a, b) => a.date.localeCompare(b.date));
 
   return (
-    <div className="flex flex-col gap-4 px-6">
+    <div className="flex flex-col gap-4 px-2 sm:px-6">
       <FilterBar active={filter} onChange={setFilter} />
 
       {visibleFights.map((fight) => (

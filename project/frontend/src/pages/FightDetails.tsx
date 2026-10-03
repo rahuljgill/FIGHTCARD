@@ -1,33 +1,20 @@
 import { useParams, Link } from "react-router-dom";
-
 import { getFightById } from "../data/fights";
-
 import { getFighterById } from "../data/fighters";
-
 import { formatRecord, calculateAge } from "../types/fighter";
-
 import { getFlagUrl } from "../utils/flags";
-
 import { getFighterSprite } from "../utils/sprites";
 
 import ring from "../assets/ring.png";
-
 import standingLeft from "../assets/genericSprites/leftStanding.png";
-
 import standingRight from "../assets/genericSprites/rightStanding.png";
-
 import crown from "../assets/crown.svg";
-
 import tickIcon from "../assets/tick.svg";
-
 import crossIcon from "../assets/cross.svg";
-
 import noContestIcon from "../assets/noContest.svg";
 
 import UndercardSection from "../components/UndercardSection";
-
 import DiscussionSection from "../components/DiscussionSection";
-
 import PredictionSection from "../components/PredictionSection";
 
 function ResultBox({ result }: { result: "W" | "L" | "NC" }) {
@@ -90,6 +77,10 @@ function FightDetail() {
   const sprite1 = getFighterSprite(fighter1.id) ?? standingLeft;
 
   const sprite2 = getFighterSprite(fighter2.id) ?? standingRight;
+
+  const displayStat = (value: string | null | undefined) => {
+    return value?.trim() ? value : "N/A";
+  };
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-12 font-body">
@@ -249,35 +240,55 @@ function FightDetail() {
             {/* STAT COMPARISON */}
             {/* ===================================================== */}
 
-            <div className="mt-5 grid grid-cols-3 gap-1 rounded-md border border-purple/30 bg-background p-3 sm:mt-8 sm:gap-4 sm:p-6">
+            <div className="mt-5 grid min-w-0 grid-cols-3 gap-1 rounded-md border border-purple/30 bg-background p-3 sm:mt-8 sm:gap-4 sm:p-6">
               {/* Fighter 1 stats */}
-              <div className="flex flex-col gap-2 text-center text-[10px] uppercase text-white sm:gap-2 sm:text-sm">
-                <p>{calculateAge(fighter1.date_of_birth)}</p>
-                <p>{fighter1.height}</p>
-                <p>{fighter1.reach}</p>
-                <p>{fighter1.stance}</p>
-                <p>{fighter1.weight}</p>
-                <p className="truncate">{fighter1.hometown}</p>
+              <div className="flex min-w-0 flex-col gap-2 text-center text-[10px] uppercase text-white sm:gap-2 sm:text-sm">
+                <p className="whitespace-nowrap">
+                  {calculateAge(fighter1.date_of_birth)}
+                </p>
+                <p className="whitespace-nowrap">
+                  {displayStat(fighter1.height)}
+                </p>
+                <p className="whitespace-nowrap">
+                  {displayStat(fighter1.reach)}
+                </p>
+                <p className="whitespace-nowrap">
+                  {displayStat(fighter1.stance)}
+                </p>
+                <p className="whitespace-nowrap">
+                  {displayStat(fighter1.weight)}
+                </p>
+                <p className="truncate">{displayStat(fighter1.hometown)}</p>
               </div>
 
               {/* Stat labels */}
-              <div className="flex flex-col gap-2 text-center text-[10px] uppercase text-purple sm:gap-2 sm:text-sm">
-                <p>Age</p>
-                <p>Height</p>
-                <p>Reach</p>
-                <p>Stance</p>
-                <p>Weight</p>
-                <p>Hometown</p>
+              <div className="flex min-w-0 flex-col gap-2 text-center text-[10px] uppercase text-purple sm:gap-2 sm:text-sm">
+                <p className="whitespace-nowrap">Age</p>
+                <p className="whitespace-nowrap">Height</p>
+                <p className="whitespace-nowrap">Reach</p>
+                <p className="whitespace-nowrap">Stance</p>
+                <p className="whitespace-nowrap">Weight</p>
+                <p className="whitespace-nowrap">Hometown</p>
               </div>
 
               {/* Fighter 2 stats */}
-              <div className="flex flex-col gap-2 text-center text-[10px] uppercase text-white sm:gap-2 sm:text-sm">
-                <p>{calculateAge(fighter2.date_of_birth)}</p>
-                <p>{fighter2.height}</p>
-                <p>{fighter2.reach}</p>
-                <p>{fighter2.stance}</p>
-                <p>{fighter2.weight}</p>
-                <p className="truncate">{fighter2.hometown}</p>
+              <div className="flex min-w-0 flex-col gap-2 text-center text-[10px] uppercase text-white sm:gap-2 sm:text-sm">
+                <p className="whitespace-nowrap">
+                  {calculateAge(fighter2.date_of_birth)}
+                </p>
+                <p className="whitespace-nowrap">
+                  {displayStat(fighter2.height)}
+                </p>
+                <p className="whitespace-nowrap">
+                  {displayStat(fighter2.reach)}
+                </p>
+                <p className="whitespace-nowrap">
+                  {displayStat(fighter2.stance)}
+                </p>
+                <p className="whitespace-nowrap">
+                  {displayStat(fighter2.weight)}
+                </p>
+                <p className="truncate">{displayStat(fighter2.hometown)}</p>
               </div>
             </div>
           </div>
